@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+dist
+coverage
+public
+.storybook-static
+.build-storybook
+**/*.svg
+**/*.ts
+**/*.tsx
+**/*.js
+**/*.jsx

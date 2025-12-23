@@ -1,0 +1,21 @@
+pre-commit:
+  parallel: true
+  commands:
+    tokens:
+      run: pnpm tokens:build && git add src/ui/tokens/variables.css
+    biome:
+      run: pnpm exec biome check --write --no-errors-on-unmatched {staged_files}
+    # 必要に応じて有効化してください（重い場合はコメントアウトのまま）
+    eslint:
+      run: pnpm lint:eslint
+    typecheck:
+      run: pnpm typecheck
+
+pre-push:
+  parallel: true
+  commands:
+    check:
+      run: pnpm check
+    # UI 変更時のみ有効化
+    # storybook-test:
+    #   run: pnpm test:storybook

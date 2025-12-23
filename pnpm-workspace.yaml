@@ -1,0 +1,11 @@
+packages:
+  - .
+
+ignoredBuiltDependencies:
+  - "@swc/core"
+
+onlyBuiltDependencies:
+  - esbuild
+  - lefthook
+  - sharp
+  - unrs-resolver
