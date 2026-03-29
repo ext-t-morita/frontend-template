@@ -14,8 +14,16 @@ describe("storybook QA and framework-aware linting", () => {
 
     const eslintConfig = readProjectFile("eslint.config.mjs");
 
-    expect(eslintConfig).toContain("next/core-web-vitals");
+    expect(eslintConfig).toContain("eslint-config-next/core-web-vitals");
     expect(eslintConfig).toContain("eslint-plugin-storybook");
+    expect(eslintConfig).toContain("no-restricted-imports");
+    expect(eslintConfig).toContain("no-restricted-syntax");
+    expect(eslintConfig).toContain("useMemo");
+    expect(eslintConfig).toContain("useCallback");
+    expect(eslintConfig).toContain("React.useMemo");
+    expect(eslintConfig).toContain("React.useCallback");
+    expect(eslintConfig).toContain("React.memo");
+    expect(eslintConfig).toContain("MemberExpression");
   });
 
   it("extends the repository with framework-aware lint and Storybook a11y", () => {
@@ -26,10 +34,12 @@ describe("storybook QA and framework-aware linting", () => {
 
     expect(packageJson.scripts["lint:framework"]).toBeDefined();
     expect(packageJson.scripts["lint:framework"]).toContain("eslint");
+    expect(packageJson.scripts["lint:framework"]).toContain("packages");
     expect(packageJson.devDependencies.eslint).toBeTruthy();
     expect(packageJson.devDependencies["eslint-config-next"]).toBeTruthy();
     expect(packageJson.devDependencies["eslint-plugin-storybook"]).toBeTruthy();
     expect(packageJson.devDependencies["@storybook/addon-a11y"]).toBeTruthy();
+    expect(packageJson.devDependencies["@eslint/eslintrc"]).toBeUndefined();
   });
 
   it("configures Storybook with QA addons", () => {
@@ -54,7 +64,18 @@ describe("storybook QA and framework-aware linting", () => {
 
     expect(rootPackage.scripts["lint:framework"]).toBeDefined();
     expect(rootPackage.scripts["lint:framework"]).toContain("eslint");
+    expect(rootPackage.scripts["lint:framework"]).toContain("packages");
     expect(lefthookConfig).toContain("pnpm lint:framework");
     expect(ciWorkflow).toContain("pnpm lint:framework");
+  });
+
+  it("documents framework-aware lint coverage for packages", () => {
+    const tooling = readProjectFile("docs/agents/06-tooling.md");
+    const workflow = readProjectFile("docs/workflows/change-workflow.md");
+
+    expect(tooling).toContain("packages");
+    expect(tooling).toContain("pnpm lint:framework");
+    expect(workflow).toContain("packages");
+    expect(workflow).toContain("pnpm lint:framework");
   });
 });

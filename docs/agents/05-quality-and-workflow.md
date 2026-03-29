@@ -100,6 +100,13 @@ AI agent 向け:
 6. code と一緒に stories/tests も更新する
 7. AGENTS.md から外れる判断は task output や PR に残す
 
+## review checklist
+
+- React Compiler が有効な file で `useMemo`, `useCallback`, `React.memo` を新規追加していないか
+- manual memoization を残す場合、profiler 根拠または stable reference requirement がコードや PR に明記されているか
+- manual memoization を外した変更では、導出ロジックが pure helper または render-time calculation に寄っているか
+- table, combobox, multiselect のような stateful primitive では、参照安定性を暗黙期待する third-party API を壊していないか
+
 ## 判断ガイド
 
 `packages/ui` に置くべきか:

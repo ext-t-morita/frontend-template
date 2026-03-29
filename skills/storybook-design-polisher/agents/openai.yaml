@@ -1,0 +1,6 @@
+interface:
+  display_name: "Storybook デザイン磨き"
+  short_description: "Storybook を CDP 監査して改善する"
+  default_prompt: "$storybook-design-polisher を使って Storybook を CDP 経由で監査し、最小の shared component から順に改善してください。"
+policy:
+  allow_implicit_invocation: false

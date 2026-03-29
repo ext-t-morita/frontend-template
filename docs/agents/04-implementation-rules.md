@@ -9,6 +9,14 @@
 5. Storybook story を app integration より先、または同時に追加する
 6. Playwright は route-level behavior や critical workflow に効く時だけ追加する
 
+## React Compiler
+
+- React Compiler を前提に、まずは素直な render code を書く
+- `useMemo` と `useCallback` は default では足さない
+- `React.memo` も default では足さない
+- 追加するのは profiler で必要性が確認できた時、または stable reference が API contract として必要な時だけにする
+- 既存の manual memoization は、触る箇所で不要と判断できた時に段階的に減らす
+
 ## 新しい page を作る時
 
 1. 既存 page shell / layout から始める

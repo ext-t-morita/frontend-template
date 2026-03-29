@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { cn } from "../../lib/cn";
 import { Button } from "./Button";
+import { getDatePickerTriggerLabel } from "./derived-state";
 import { CalendarIcon } from "./icons";
 import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
 
@@ -17,16 +18,6 @@ type DatePickerProps = {
   value?: string;
   defaultValue?: string;
 };
-
-function formatDateLabel(value: string) {
-  if (!value) {
-    return "";
-  }
-
-  return new Intl.DateTimeFormat("en-US", {
-    dateStyle: "medium",
-  }).format(new Date(`${value}T00:00:00`));
-}
 
 export function DatePicker({
   className,
@@ -43,10 +34,7 @@ export function DatePicker({
   const [open, setOpen] = useState(false);
   const currentValue = value ?? internalValue;
 
-  const triggerLabel = useMemo(
-    () => formatDateLabel(currentValue) || placeholder,
-    [currentValue, placeholder],
-  );
+  const triggerLabel = getDatePickerTriggerLabel(currentValue, placeholder);
 
   const setSelectedValue = (nextValue: string) => {
     if (value === undefined) {

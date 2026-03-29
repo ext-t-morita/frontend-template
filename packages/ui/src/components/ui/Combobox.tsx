@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { cn } from "../../lib/cn";
+import { filterComboboxOptions } from "./derived-state";
 import { CheckIcon, ChevronDownIcon } from "./icons";
 import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
 import { SearchInput } from "./SearchInput";
@@ -44,27 +45,7 @@ export function Combobox({
   const [query, setQuery] = useState("");
   const currentValue = value ?? internalValue;
 
-  const filteredOptions = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
-
-    if (!normalizedQuery) {
-      return options;
-    }
-
-    return options.filter((option) => {
-      const haystack = [
-        option.label,
-        option.value,
-        option.description,
-        ...(option.keywords ?? []),
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
-
-      return haystack.includes(normalizedQuery);
-    });
-  }, [options, query]);
+  const filteredOptions = filterComboboxOptions(options, query);
 
   const selectedOption = options.find(
     (option) => option.value === currentValue,

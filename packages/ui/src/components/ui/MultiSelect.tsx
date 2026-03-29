@@ -1,10 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { cn } from "../../lib/cn";
 import { Badge } from "./Badge";
 import { Button } from "./Button";
 import type { ComboboxOption } from "./Combobox";
+import { filterComboboxOptions, getSelectedOptions } from "./derived-state";
 import { CheckIcon, ChevronDownIcon } from "./icons";
 import { Popover, PopoverContent, PopoverTrigger } from "./Popover";
 import { SearchInput } from "./SearchInput";
@@ -39,31 +40,8 @@ export function MultiSelect({
   const [query, setQuery] = useState("");
   const currentValue = value ?? internalValue;
 
-  const filteredOptions = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
-
-    if (!normalizedQuery) {
-      return options;
-    }
-
-    return options.filter((option) => {
-      const haystack = [
-        option.label,
-        option.value,
-        option.description,
-        ...(option.keywords ?? []),
-      ]
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
-
-      return haystack.includes(normalizedQuery);
-    });
-  }, [options, query]);
-
-  const selectedOptions = options.filter((option) =>
-    currentValue.includes(option.value),
-  );
+  const filteredOptions = filterComboboxOptions(options, query);
+  const selectedOptions = getSelectedOptions(options, currentValue);
 
   const setSelectedValues = (nextValue: string[]) => {
     if (value === undefined) {
