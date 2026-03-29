@@ -25,6 +25,13 @@ export const Destructive = meta.story({
   },
 });
 
+export const Ghost = meta.story({
+  args: {
+    tone: "ghost",
+    children: "Learn more",
+  },
+});
+
 export const Large = meta.story({
   args: {
     size: "lg",
