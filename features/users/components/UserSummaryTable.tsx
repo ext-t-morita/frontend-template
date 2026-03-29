@@ -23,7 +23,7 @@ export function UserSummaryTable({ users }: UserSummaryTableProps) {
             Feature code owns its server contract and page-local presentation.
           </h2>
         </div>
-        <div className="overflow-hidden rounded-[calc(var(--radius-lg)-6px)] border border-[var(--color-border-subtle)]">
+        <div className="overflow-hidden rounded-[calc(var(--radius-card)-6px)] border border-[var(--color-border-subtle)]">
           <table className="w-full border-collapse text-left text-sm">
             <thead className="bg-[rgba(255,255,255,0.03)] text-[var(--color-fg-muted)]">
               <tr>

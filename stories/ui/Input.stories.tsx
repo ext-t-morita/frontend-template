@@ -23,3 +23,10 @@ export const WithValue = meta.story({
     value: "Active query",
   },
 });
+
+export const Invalid = meta.story({
+  args: {
+    invalid: true,
+    value: "Pending approval",
+  },
+});
