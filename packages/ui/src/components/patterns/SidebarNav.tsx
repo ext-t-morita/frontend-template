@@ -43,8 +43,8 @@ export function SidebarNav({ brand, footer, sections }: SidebarNavProps) {
               {section.items.map((item) => (
                 <a
                   className={cn(
-                    "block rounded-[var(--radius-control)] px-3 py-3 transition hover:bg-[rgba(255,255,255,0.05)]",
-                    item.current && "bg-[rgba(76,125,255,0.14)]",
+                    "block rounded-[var(--radius-control)] px-3 py-3 transition-colors hover:bg-[var(--color-bg-neutral-hovered)]",
+                    item.current && "bg-[var(--color-bg-selected)]",
                   )}
                   href={item.href ?? "#"}
                   key={item.label}

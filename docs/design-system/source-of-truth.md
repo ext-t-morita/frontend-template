@@ -23,4 +23,6 @@ Mockup や Pencil sketch は参考情報です。
 - page-level code に再利用される見た目の値を直書きしない
 - 繰り返す spacing, color, typography, radius, shadow は token に昇格する
 - palette 由来の名前より semantic token name を優先する
+- light / dark の差分は theme token で吸収し、component 側で `rgba(...)` や palette 値を直書きしない
+- hover, selected, focus, danger など interaction/state 色も semantic token に揃える
 - accessibility-sensitive な interaction logic は page-local の ad-hoc 実装ではなく shared primitive に置く

@@ -28,6 +28,10 @@ describe("ui primitives and playwright setup", () => {
     expect(inputStory).toContain("meta.story");
     expect(badgeStory).toContain("preview.meta");
     expect(foundationsStory).toContain("preview.meta");
+    expect(foundationsStory).toContain("LITE");
+    expect(foundationsStory).toContain("DARK");
+    expect(foundationsStory).toContain("tokens.themes.light");
+    expect(foundationsStory).toContain("tokens.themes.dark");
     expect(pageStory).toContain("preview.meta");
   });
 

@@ -20,7 +20,7 @@ export const SelectTrigger = forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
-      "flex h-11 w-full items-center justify-between rounded-[var(--radius-control)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-elevated)] px-4 text-sm text-[var(--color-fg-default)] outline-none transition focus:border-[var(--color-action-primary-bg)] focus:ring-2 focus:ring-[rgba(76,125,255,0.2)] disabled:cursor-not-allowed disabled:opacity-60",
+      "flex h-11 w-full items-center justify-between rounded-[var(--radius-control)] border border-[var(--color-border-input)] bg-[var(--color-bg-surface)] px-4 text-sm text-[var(--color-fg-default)] outline-none transition-colors focus:border-[var(--color-border-focus)] focus:ring-2 focus:ring-[var(--color-border-focus)] disabled:cursor-not-allowed disabled:opacity-60",
       className,
     )}
     {...props}
@@ -80,7 +80,7 @@ export const SelectItem = forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default items-center rounded-[var(--radius-control)] px-3 py-2 pl-9 text-sm text-[var(--color-fg-default)] outline-none transition focus:bg-[rgba(255,255,255,0.08)] data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "relative flex cursor-default items-center rounded-[var(--radius-control)] px-3 py-2 pl-9 text-sm text-[var(--color-fg-default)] outline-none transition-colors focus:bg-[var(--color-bg-neutral-hovered)] data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className,
     )}
     {...props}

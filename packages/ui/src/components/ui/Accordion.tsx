@@ -35,7 +35,7 @@ export const AccordionTrigger = forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between px-5 py-4 text-left text-sm font-medium text-[var(--color-fg-default)] outline-none transition hover:bg-[rgba(255,255,255,0.04)]",
+        "flex flex-1 items-center justify-between px-5 py-4 text-left text-sm font-medium text-[var(--color-fg-default)] outline-none transition-colors hover:bg-[var(--color-bg-neutral-hovered)]",
         className,
       )}
       {...props}

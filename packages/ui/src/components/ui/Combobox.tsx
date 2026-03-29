@@ -37,7 +37,7 @@ export function Combobox({
   onValueChange,
   options,
   placeholder = "Select an option",
-  searchPlaceholder = "Search options",
+  searchPlaceholder = "Search options…",
   value,
 }: ComboboxProps) {
   const [internalValue, setInternalValue] = useState(defaultValue ?? "");
@@ -67,9 +67,9 @@ export function Combobox({
         <button
           aria-expanded={open}
           className={cn(
-            "flex w-full items-center justify-between gap-3 rounded-[var(--radius-control)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-elevated)] px-4 py-3 text-left text-sm text-[var(--color-fg-default)] outline-none transition focus-visible:ring-2 focus-visible:ring-[rgba(76,125,255,0.2)] disabled:cursor-not-allowed disabled:opacity-60",
+            "flex w-full items-center justify-between gap-3 rounded-[var(--radius-control)] border border-[var(--color-border-input)] bg-[var(--color-bg-surface)] px-4 py-3 text-left text-sm text-[var(--color-fg-default)] outline-none transition-colors focus-visible:border-[var(--color-border-focus)] focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] disabled:cursor-not-allowed disabled:opacity-60",
             invalid &&
-              "border-rose-400 focus-visible:ring-[rgba(248,113,113,0.2)]",
+              "border-[var(--color-border-danger)] focus-visible:ring-[var(--color-border-danger)]",
             className,
           )}
           disabled={disabled}
@@ -99,9 +99,9 @@ export function Combobox({
               filteredOptions.map((option) => (
                 <button
                   className={cn(
-                    "flex w-full items-start justify-between gap-3 rounded-[var(--radius-control)] px-3 py-2.5 text-left transition hover:bg-[rgba(255,255,255,0.06)]",
+                    "flex w-full items-start justify-between gap-3 rounded-[var(--radius-control)] px-3 py-2.5 text-left transition-colors hover:bg-[var(--color-bg-neutral-hovered)]",
                     option.value === currentValue &&
-                      "bg-[rgba(76,125,255,0.14)] text-[var(--color-action-primary-bg)]",
+                      "bg-[var(--color-bg-selected)] text-[var(--color-fg-accent)]",
                     option.disabled &&
                       "cursor-not-allowed opacity-50 hover:bg-transparent",
                   )}

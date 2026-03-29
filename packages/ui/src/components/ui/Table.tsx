@@ -25,7 +25,7 @@ export function TableHeader({
   return (
     <thead
       className={cn(
-        "border-b border-[var(--color-border-subtle)] bg-[rgba(255,255,255,0.03)]",
+        "border-b border-[var(--color-border-subtle)] bg-[var(--color-bg-sunken)]",
         className,
       )}
       {...props}
@@ -49,7 +49,7 @@ export function TableRow({
   return (
     <tr
       className={cn(
-        "border-b border-[var(--color-border-subtle)] transition hover:bg-[rgba(255,255,255,0.04)]",
+        "border-b border-[var(--color-border-subtle)] transition-colors hover:bg-[var(--color-bg-neutral-hovered)]",
         className,
       )}
       {...props}

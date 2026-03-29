@@ -31,7 +31,7 @@ export function SearchInput({
       {onClear && hasValue ? (
         <button
           aria-label="Clear search"
-          className="absolute right-3 top-1/2 inline-flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full text-[var(--color-fg-muted)] transition hover:bg-[rgba(255,255,255,0.08)] hover:text-[var(--color-fg-default)]"
+          className="absolute right-3 top-1/2 inline-flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full text-[var(--color-fg-muted)] transition-colors hover:bg-[var(--color-bg-neutral-hovered)] hover:text-[var(--color-fg-default)]"
           onClick={onClear}
           type="button"
         >

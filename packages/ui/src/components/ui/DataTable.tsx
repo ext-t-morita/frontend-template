@@ -61,7 +61,7 @@ export function DataTableEmptyState({
 
 export function DataTableLoadingState() {
   return (
-    <div className="space-y-3 rounded-[var(--radius-card)] border border-[var(--color-border-subtle)] bg-[rgba(255,255,255,0.03)] p-5">
+    <div className="space-y-3 rounded-[var(--radius-card)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-sunken)] p-5">
       <Skeleton className="w-48" />
       <Skeleton className="w-full" shape="block" />
       <Skeleton className="w-full" shape="block" />
@@ -71,7 +71,7 @@ export function DataTableLoadingState() {
 
 export function DataTableErrorState({ message }: { message: string }) {
   return (
-    <div className="rounded-[var(--radius-card)] border border-rose-400/30 bg-[rgba(248,113,113,0.08)] p-5">
+    <div className="rounded-[var(--radius-card)] border border-[var(--color-border-danger)] bg-[var(--color-danger-surface)] p-5">
       <div className="mb-3">
         <StatusPill tone="danger">Error</StatusPill>
       </div>
@@ -114,7 +114,7 @@ export function DataTableColumnHeader<TData, TValue>({
 export function DataTableToolbar<TData>({
   children,
   searchKey,
-  searchPlaceholder = "Search rows",
+  searchPlaceholder = "Search rows…",
   table,
 }: {
   table: TanStackTable<TData>;
@@ -312,7 +312,7 @@ export function DataTable<TData, TValue>({
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   className={cn(
-                    row.getIsSelected() && "bg-[rgba(76,125,255,0.08)]",
+                    row.getIsSelected() && "bg-[var(--color-bg-selected)]",
                   )}
                   key={row.id}
                 >

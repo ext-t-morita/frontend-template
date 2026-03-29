@@ -72,14 +72,23 @@ const toCssLines = (
 
 const buildThemeBlock = (
   selector: string,
-  colorTokens: Record<string, string>,
+  overrides: Partial<{
+    color: Record<string, string>;
+    radius: Record<string, string>;
+    shadow: Record<string, string>;
+    typography: Record<string, string>;
+  }>,
   source: TokenSource,
 ) => {
   const lines = [
-    ...toCssLines("color", colorTokens, source),
-    ...toCssLines("radius", source.semantic.radius, source),
-    ...toCssLines("shadow", source.semantic.shadow, source),
-    ...toCssLines("font", source.semantic.typography, source),
+    ...toCssLines("color", overrides.color ?? source.semantic.color, source),
+    ...toCssLines("radius", overrides.radius ?? source.semantic.radius, source),
+    ...toCssLines("shadow", overrides.shadow ?? source.semantic.shadow, source),
+    ...toCssLines(
+      "font",
+      overrides.typography ?? source.semantic.typography,
+      source,
+    ),
   ];
 
   return `${selector} {\n${lines.join("\n")}\n}`;
@@ -87,13 +96,15 @@ const buildThemeBlock = (
 
 export const buildTokenCssVariables = (source: TokenSource) => {
   const themeBlocks = Object.entries(source.themes).map(([themeName, theme]) =>
-    buildThemeBlock(`[data-theme="${themeName}"]`, theme.color, source),
+    buildThemeBlock(`[data-theme="${themeName}"]`, theme, source),
   );
 
-  const defaultThemeColors = source.themes.dark?.color ?? source.semantic.color;
+  const defaultTheme = source.themes.light ?? {
+    color: source.semantic.color,
+  };
 
   return [
-    buildThemeBlock(":root", defaultThemeColors, source),
+    buildThemeBlock(":root", defaultTheme, source),
     ...themeBlocks,
     "",
   ].join("\n\n");
