@@ -15,3 +15,40 @@
   --font-display: "Inter Tight", "Inter", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 }
+
+[data-theme="dark"] {
+  --color-bg-canvas: #0b1020;
+  --color-bg-surface: #121a2b;
+  --color-bg-elevated: #182238;
+  --color-fg-default: #f4f7ff;
+  --color-fg-muted: #9fb0cc;
+  --color-border-subtle: #26324d;
+  --color-action-primary-bg: #4c7dff;
+  --color-action-primary-fg: #f4f7ff;
+  --radius-card: 1.5rem;
+  --radius-control: 1rem;
+  --radius-pill: 999px;
+  --shadow-surface: 0 24px 64px rgba(7, 12, 24, 0.44);
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-display: "Inter Tight", "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+[data-theme="light"] {
+  --color-bg-canvas: #f4f7ff;
+  --color-bg-surface: #ffffff;
+  --color-bg-elevated: #e8eefb;
+  --color-fg-default: #0b1020;
+  --color-fg-muted: #52627d;
+  --color-border-subtle: #c8d3ea;
+  --color-action-primary-bg: #335eea;
+  --color-action-primary-fg: #f4f7ff;
+  --radius-card: 1.5rem;
+  --radius-control: 1rem;
+  --radius-pill: 999px;
+  --shadow-surface: 0 24px 64px rgba(7, 12, 24, 0.44);
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-display: "Inter Tight", "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+

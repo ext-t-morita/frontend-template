@@ -70,9 +70,11 @@ const toCssLines = (
     return `  --${prefix}-${cssName}: ${resolveTokenValue(source, value)};`;
   });
 
-export const buildTokenCssVariables = (source: TokenSource) => {
-  const colorTokens = source.themes.dark.color ?? source.semantic.color;
-
+const buildThemeBlock = (
+  selector: string,
+  colorTokens: Record<string, string>,
+  source: TokenSource,
+) => {
   const lines = [
     ...toCssLines("color", colorTokens, source),
     ...toCssLines("radius", source.semantic.radius, source),
@@ -80,5 +82,19 @@ export const buildTokenCssVariables = (source: TokenSource) => {
     ...toCssLines("font", source.semantic.typography, source),
   ];
 
-  return `:root {\n${lines.join("\n")}\n}\n`;
+  return `${selector} {\n${lines.join("\n")}\n}`;
+};
+
+export const buildTokenCssVariables = (source: TokenSource) => {
+  const themeBlocks = Object.entries(source.themes).map(([themeName, theme]) =>
+    buildThemeBlock(`[data-theme="${themeName}"]`, theme.color, source),
+  );
+
+  const defaultThemeColors = source.themes.dark?.color ?? source.semantic.color;
+
+  return [
+    buildThemeBlock(":root", defaultThemeColors, source),
+    ...themeBlocks,
+    "",
+  ].join("\n\n");
 };
