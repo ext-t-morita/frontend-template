@@ -38,6 +38,13 @@ describe("storybook QA and framework-aware linting", () => {
     expect(main).toContain("@storybook/addon-a11y");
   });
 
+  it("wraps stories so single components are not stretched by the review grid", () => {
+    const preview = readProjectFile(".storybook/preview.ts");
+
+    expect(preview).toContain('width: "100%"');
+    expect(preview).toContain("minWidth: 0");
+  });
+
   it("runs framework-aware lint outside the fast pre-commit path", () => {
     const rootPackage = JSON.parse(readProjectFile("package.json")) as {
       scripts: Record<string, string>;
