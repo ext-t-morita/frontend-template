@@ -9,12 +9,12 @@ const readProjectFile = (path: string) =>
   readFileSync(projectPath(path), "utf8");
 
 describe("ideal future repository structure", () => {
-  it("uses a pnpm workspace with a Next.js web app", () => {
+  it("uses a pnpm workspace with a root-level Next.js app", () => {
     expect(existsSync(projectPath("pnpm-workspace.yaml"))).toBe(true);
-    expect(existsSync(projectPath("apps/web/package.json"))).toBe(true);
-    expect(existsSync(projectPath("apps/web/app/layout.tsx"))).toBe(true);
-    expect(existsSync(projectPath("apps/web/app/page.tsx"))).toBe(true);
-    expect(existsSync(projectPath("apps/web/next.config.ts"))).toBe(true);
+    expect(existsSync(projectPath("package.json"))).toBe(true);
+    expect(existsSync(projectPath("app/layout.tsx"))).toBe(true);
+    expect(existsSync(projectPath("app/page.tsx"))).toBe(true);
+    expect(existsSync(projectPath("next.config.ts"))).toBe(true);
   });
 
   it("keeps design tokens and UI in shared packages", () => {
@@ -48,12 +48,12 @@ describe("ideal future repository structure", () => {
     expect(existsSync(projectPath("tests/visual/README.md"))).toBe(true);
   });
 
-  it("routes root scripts through the workspace app", () => {
+  it("exposes Next.js scripts from the workspace root", () => {
     const packageJson = JSON.parse(readProjectFile("package.json")) as {
       scripts: Record<string, string>;
     };
 
-    expect(packageJson.scripts.dev).toContain("--filter");
-    expect(packageJson.scripts.build).toContain("--filter");
+    expect(packageJson.scripts.dev).toBe("next dev");
+    expect(packageJson.scripts.build).toBe("next build");
   });
 });

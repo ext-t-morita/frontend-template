@@ -10,7 +10,7 @@ export default defineMain({
   framework: {
     name: "@storybook/nextjs",
     options: {
-      nextConfigPath: path.resolve(process.cwd(), "apps/web/next.config.ts"),
+      nextConfigPath: path.resolve(process.cwd(), "next.config.ts"),
     },
   },
 });

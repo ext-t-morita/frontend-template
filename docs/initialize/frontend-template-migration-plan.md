@@ -2,8 +2,8 @@
 
 `frontend-template` からは、取り込む価値がある差分だけを移します。
 
-このリポジトリは今の workspace-first / docs-first な形を維持します。  
-tooling を取り込むために single-app starter へ戻しません。
+このリポジトリは root app + shared packages / docs-first な形を維持します。  
+tooling を取り込む時も、shared packages は残したまま root-level Next.js app へ寄せます。
 
 ## 取り込むもの
 
@@ -17,7 +17,7 @@ tooling を取り込むために single-app starter へ戻しません。
 ## 取り込まないもの
 
 - Chromatic
-- single-app 前提の directory assumption
+- app と shared packages を同時に捨てるような directory assumption
 - repo 固有の product naming
 - `docs/initialize/*` で auth を決める前の Auth.js 実装
 - Turbopack に問題が出る前の webpack fallback build

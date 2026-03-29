@@ -16,7 +16,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "pnpm --filter @repo/web dev",
+    command: "pnpm dev",
     url: "http://127.0.0.1:3000",
     reuseExistingServer: true,
     timeout: 120000,

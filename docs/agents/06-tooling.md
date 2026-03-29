@@ -18,8 +18,8 @@
 - `pnpm tokens:build`: JSON token source から CSS を再生成
 - `pnpm build`: production build
 - `pnpm check`: lint, format check, test, typecheck, build をまとめて実行
-- `pnpm --filter @repo/web storybook`: Storybook dev
-- `pnpm --filter @repo/web build-storybook`: Storybook build
+- `pnpm storybook`: Storybook dev
+- `pnpm build-storybook`: Storybook build
 
 ## setup policy
 
@@ -35,7 +35,7 @@
 - `pre-commit` は staged `*.ts` / `*.tsx` に Biome をかける
 - `pre-commit` は staged の非 TypeScript file に Prettier をかけて再 stage する
 - token source が変わったら `pre-commit` で token artifact を再生成する
-- `pre-push` は `apps/web`, `stories`, `.storybook` に対する framework-aware ESLint を走らせる
+- `pre-push` は `app`, `components`, `features`, `stories`, `.storybook` に対する framework-aware ESLint を走らせる
 - `pre-push` は `pnpm test` または `pnpm build` が落ちたら止める
 
 ## agent 向け期待値

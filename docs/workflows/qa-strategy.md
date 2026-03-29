@@ -72,6 +72,6 @@ pnpm test
 pnpm typecheck
 pnpm tokens:build
 pnpm build
-pnpm --filter @repo/web build-storybook
-pnpm --filter @repo/web test:e2e:list
+pnpm build-storybook
+pnpm test:e2e:list
 ```

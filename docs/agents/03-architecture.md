@@ -7,18 +7,12 @@
 ```text
 .
 ├─ AGENTS.md
+├─ app/
+├─ components/
+├─ features/
+├─ public/
 ├─ package.json
 ├─ pnpm-workspace.yaml
-├─ apps/
-│  └─ web/
-│     ├─ app/
-│     ├─ components/
-│     ├─ features/
-│     ├─ lib/
-│     ├─ hooks/
-│     ├─ styles/
-│     ├─ public/
-│     └─ types/
 ├─ packages/
 │  ├─ design-tokens/
 │  ├─ ui/
@@ -60,7 +54,7 @@ token source と generation logic を持ちます。
 - `components/composite/`: 中くらいの複雑さの reusable combinations
 - `components/patterns/`: 高レベルの繰り返しパターン
 
-### `apps/web/components`
+### `components`
 
 app-local component だけを置きます。
 
@@ -72,7 +66,7 @@ app-local component だけを置きます。
 
 `packages/ui` を one-off page hack で汚さないこと。
 
-### `apps/web/features`
+### `features`
 
 feature-oriented domain code を置きます。
 

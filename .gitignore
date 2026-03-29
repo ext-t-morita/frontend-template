@@ -1,5 +1,5 @@
 node_modules
 coverage
 .next
-apps/web/.next
-apps/web/storybook-static
+storybook-static
+*.tsbuildinfo

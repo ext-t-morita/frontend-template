@@ -59,7 +59,7 @@ jobs:
         run: pnpm build
 
       - name: Build Storybook
-        run: pnpm --filter @repo/web build-storybook
+        run: pnpm build-storybook
 
       - name: List Playwright specs
-        run: pnpm --filter @repo/web test:e2e:list
+        run: pnpm test:e2e:list

@@ -15,7 +15,7 @@ export default [
     ignores: [
       "**/node_modules/**",
       "**/.next/**",
-      "apps/web/storybook-static/**",
+      "storybook-static/**",
       "coverage/**",
     ],
   },
@@ -26,7 +26,7 @@ export default [
   {
     settings: {
       next: {
-        rootDir: "apps/web",
+        rootDir: ".",
       },
     },
     rules: {
@@ -34,10 +34,14 @@ export default [
     },
   },
   {
-    files: ["apps/web/**/*.{ts,tsx}"],
+    files: [
+      "app/**/*.{ts,tsx}",
+      "components/**/*.{ts,tsx}",
+      "features/**/*.{ts,tsx}",
+    ],
     settings: {
       next: {
-        rootDir: "apps/web",
+        rootDir: ".",
       },
     },
   },
