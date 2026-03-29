@@ -73,3 +73,51 @@ export function CrossIcon(props: SVGProps<SVGSVGElement>) {
     </IconBase>
   );
 }
+
+export function SearchIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <IconBase {...props}>
+      <circle cx="7" cy="7" r="4.5" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="M10.5 10.5L13 13"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="1.5"
+      />
+    </IconBase>
+  );
+}
+
+export function CalendarIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <IconBase {...props}>
+      <rect
+        height="10"
+        rx="2"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        width="10"
+        x="3"
+        y="4"
+      />
+      <path
+        d="M5 2.5V5"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M11 2.5V5"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M3 7H13"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="1.5"
+      />
+    </IconBase>
+  );
+}
