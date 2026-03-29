@@ -2,20 +2,23 @@ pre-commit:
   parallel: true
   commands:
     tokens:
-      run: pnpm tokens:build && git add src/ui/tokens/variables.css
+      glob: "packages/design-tokens/src/**/*.{json,ts}"
+      run: pnpm tokens:build && git add packages/design-tokens/dist/tokens.css
+      stage_fixed: true
     biome:
+      glob: "**/*.{ts,tsx}"
       run: pnpm exec biome check --write --no-errors-on-unmatched {staged_files}
-    # 必要に応じて有効化してください（重い場合はコメントアウトのまま）
-    eslint:
-      run: pnpm lint:eslint
-    typecheck:
-      run: pnpm typecheck
+      stage_fixed: true
+    prettier:
+      glob: "**/*.{css,html,json,md,mjs,yaml,yml}"
+      run: pnpm exec prettier --write {staged_files}
+      stage_fixed: true
 
 pre-push:
-  parallel: true
   commands:
-    check:
-      run: pnpm check
-    # UI 変更時のみ有効化
-    # storybook-test:
-    #   run: pnpm test:storybook
+    lint-framework:
+      run: pnpm lint:framework
+    test:
+      run: pnpm test
+    build:
+      run: pnpm build

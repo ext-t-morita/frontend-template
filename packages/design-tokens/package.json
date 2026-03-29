@@ -1,0 +1,11 @@
+{
+  "name": "@repo/design-tokens",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./index.json": "./src/index.json",
+    "./styles.css": "./dist/tokens.css"
+  }
+}

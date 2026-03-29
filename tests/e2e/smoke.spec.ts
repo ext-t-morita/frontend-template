@@ -1,11 +1,13 @@
-import { expect, type Page, test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
-const baseURL = process.env.BASE_URL;
+test("homepage renders the workspace scaffold", async ({ page }) => {
+  await page.goto("/");
 
-test.skip(!baseURL, "Set BASE_URL (e.g. http://localhost:3000) to run the smoke e2e");
-
-test("home page loads", async ({ page }: { page: Page }) => {
-  if (!baseURL) return;
-  await page.goto(baseURL);
-  await expect(page).toHaveTitle(/User Provisioning|Next/);
+  await expect(
+    page.getByRole("heading", { name: "Commercial-grade UI workspace" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Open implementation brief" }),
+  ).toBeVisible();
+  await expect(page.getByText("Ava Cole")).toBeVisible();
 });

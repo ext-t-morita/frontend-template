@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lint-typecheck:
+  validate:
     runs-on: ubuntu-latest
     env:
       NEXT_TELEMETRY_DISABLED: "1"
@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20.18.0
-          cache: "pnpm"
+          cache: pnpm
 
       - name: Enable Corepack
         run: corepack enable
@@ -34,57 +34,29 @@ jobs:
       - name: Generate tokens
         run: pnpm tokens:build
 
+      - name: Verify generated token artifacts
+        run: git diff --exit-code -- packages/design-tokens/dist/tokens.css
+
       - name: Lint
         run: pnpm lint
+
+      - name: Framework-aware lint
+        run: pnpm lint:framework
+
+      - name: Format check
+        run: pnpm format:check
+
+      - name: Test
+        run: pnpm test
 
       - name: Typecheck
         run: pnpm typecheck
 
-  build-turbopack:
-    runs-on: ubuntu-latest
-    needs: lint-typecheck
-    env:
-      NEXT_TELEMETRY_DISABLED: "1"
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.18.0
-          cache: "pnpm"
-      - run: corepack enable
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm tokens:build
-      - run: pnpm build
+      - name: Build
+        run: pnpm build
 
-  build-webpack:
-    runs-on: ubuntu-latest
-    needs: lint-typecheck
-    env:
-      NEXT_TELEMETRY_DISABLED: "1"
-      NEXT_BUILDER: webpack
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.18.0
-          cache: "pnpm"
-      - run: corepack enable
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm tokens:build
-      - run: pnpm build:webpack
+      - name: Build Storybook
+        run: pnpm --filter @repo/web build-storybook
 
-  storybook-build:
-    runs-on: ubuntu-latest
-    needs: lint-typecheck
-    env:
-      NEXT_TELEMETRY_DISABLED: "1"
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.18.0
-          cache: "pnpm"
-      - run: corepack enable
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm tokens:build
-      - run: pnpm build-storybook
+      - name: List Playwright specs
+        run: pnpm --filter @repo/web test:e2e:list

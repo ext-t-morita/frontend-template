@@ -1,0 +1,74 @@
+{
+  "base": {
+    "color": {
+      "slate": {
+        "950": "#0b1020",
+        "900": "#121a2b",
+        "800": "#182238",
+        "700": "#26324d",
+        "300": "#9fb0cc",
+        "100": "#f4f7ff"
+      },
+      "blue": {
+        "500": "#4c7dff"
+      }
+    },
+    "space": {
+      "4": "1rem",
+      "6": "1.5rem",
+      "8": "2rem"
+    },
+    "radius": {
+      "md": "1rem",
+      "lg": "1.5rem",
+      "pill": "999px"
+    },
+    "shadow": {
+      "panel": "0 24px 64px rgba(7, 12, 24, 0.44)"
+    },
+    "typography": {
+      "body": "\"Inter\", \"Segoe UI\", sans-serif",
+      "display": "\"Inter Tight\", \"Inter\", sans-serif",
+      "mono": "\"IBM Plex Mono\", monospace"
+    }
+  },
+  "semantic": {
+    "color": {
+      "bg.canvas": "{base.color.slate.950}",
+      "bg.surface": "{base.color.slate.900}",
+      "bg.elevated": "{base.color.slate.800}",
+      "fg.default": "{base.color.slate.100}",
+      "fg.muted": "{base.color.slate.300}",
+      "border.subtle": "{base.color.slate.700}",
+      "action.primary.bg": "{base.color.blue.500}",
+      "action.primary.fg": "{base.color.slate.100}"
+    },
+    "radius": {
+      "card": "{base.radius.lg}",
+      "control": "{base.radius.md}",
+      "pill": "{base.radius.pill}"
+    },
+    "shadow": {
+      "surface": "{base.shadow.panel}"
+    },
+    "typography": {
+      "body": "{base.typography.body}",
+      "display": "{base.typography.display}",
+      "mono": "{base.typography.mono}"
+    }
+  },
+  "themes": {
+    "dark": {
+      "color": {
+        "bg.canvas": "#0b1020",
+        "bg.surface": "#121a2b",
+        "bg.elevated": "#182238",
+        "fg.default": "#f4f7ff",
+        "fg.muted": "#9fb0cc",
+        "border.subtle": "#26324d",
+        "action.primary.bg": "#4c7dff",
+        "action.primary.fg": "#f4f7ff"
+      }
+    }
+  }
+}
