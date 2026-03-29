@@ -26,6 +26,7 @@ describe("CI and initialization baseline", () => {
 
     const ciWorkflow = readProjectFile(".github/workflows/ci.yml");
 
+    expect(ciWorkflow).toContain("node-version: 24.14.1");
     expect(ciWorkflow).toContain("pnpm install --frozen-lockfile");
     expect(ciWorkflow).toContain("pnpm tokens:build");
     expect(ciWorkflow).toContain("pnpm lint");
