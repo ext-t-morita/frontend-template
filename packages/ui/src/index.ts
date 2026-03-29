@@ -23,6 +23,15 @@ export { Button } from "./components/ui/Button";
 export { Card } from "./components/ui/Card";
 export { Checkbox } from "./components/ui/Checkbox";
 export {
+  DataTable,
+  DataTableColumnHeader,
+  DataTableEmptyState,
+  DataTableErrorState,
+  DataTableLoadingState,
+  DataTablePagination,
+  DataTableToolbar,
+} from "./components/ui/DataTable";
+export {
   Dialog,
   DialogClose,
   DialogContent,
@@ -83,6 +92,14 @@ export { Skeleton } from "./components/ui/Skeleton";
 export { StatusPill } from "./components/ui/StatusPill";
 export { SurfaceCard } from "./components/ui/SurfaceCard";
 export { Switch } from "./components/ui/Switch";
+export {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./components/ui/Table";
 export { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/Tabs";
 export { Textarea } from "./components/ui/Textarea";
 export {
