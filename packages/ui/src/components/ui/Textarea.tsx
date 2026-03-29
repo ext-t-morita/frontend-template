@@ -1,25 +1,25 @@
-import type { InputHTMLAttributes } from "react";
+import type { TextareaHTMLAttributes } from "react";
 import { cn } from "../../lib/cn";
 
-type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   invalid?: boolean;
 };
 
-export function Input({
+export function Textarea({
   className,
   invalid = false,
-  type = "text",
+  rows = 4,
   ...props
-}: InputProps) {
+}: TextareaProps) {
   return (
-    <input
+    <textarea
       className={cn(
         "w-full rounded-[var(--radius-control)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-elevated)] px-4 py-3 text-sm text-[var(--color-fg-default)] outline-none transition placeholder:text-[var(--color-fg-muted)] focus:border-[var(--color-action-primary-bg)] focus:ring-2 focus:ring-[rgba(76,125,255,0.2)] disabled:cursor-not-allowed disabled:opacity-60",
         invalid &&
           "border-rose-400 focus:border-rose-400 focus:ring-[rgba(248,113,113,0.2)]",
         className,
       )}
-      type={type}
+      rows={rows}
       {...props}
     />
   );

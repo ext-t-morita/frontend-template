@@ -17,3 +17,17 @@ export const Secondary = meta.story({
     children: "Secondary action",
   },
 });
+
+export const Destructive = meta.story({
+  args: {
+    tone: "destructive",
+    children: "Delete workspace",
+  },
+});
+
+export const Large = meta.story({
+  args: {
+    size: "lg",
+    children: "Ship update",
+  },
+});
