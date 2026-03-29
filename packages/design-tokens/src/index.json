@@ -69,6 +69,18 @@
         "action.primary.bg": "#4c7dff",
         "action.primary.fg": "#f4f7ff"
       }
+    },
+    "light": {
+      "color": {
+        "bg.canvas": "#f4f7ff",
+        "bg.surface": "#ffffff",
+        "bg.elevated": "#e8eefb",
+        "fg.default": "#0b1020",
+        "fg.muted": "#52627d",
+        "border.subtle": "#c8d3ea",
+        "action.primary.bg": "#335eea",
+        "action.primary.fg": "#f4f7ff"
+      }
     }
   }
 }
