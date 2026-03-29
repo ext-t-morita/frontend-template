@@ -1,5 +1,9 @@
 export { PageShell } from "./components/patterns/PageShell";
 export {
+  SettingsForm,
+  type SettingsFormValues,
+} from "./components/patterns/SettingsForm";
+export {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -22,6 +26,7 @@ export { Badge } from "./components/ui/Badge";
 export { Button } from "./components/ui/Button";
 export { Card } from "./components/ui/Card";
 export { Checkbox } from "./components/ui/Checkbox";
+export { Combobox, type ComboboxOption } from "./components/ui/Combobox";
 export {
   DataTable,
   DataTableColumnHeader,
@@ -31,6 +36,7 @@ export {
   DataTablePagination,
   DataTableToolbar,
 } from "./components/ui/DataTable";
+export { DatePicker } from "./components/ui/DatePicker";
 export {
   Dialog,
   DialogClose,
@@ -68,9 +74,12 @@ export {
   DropdownMenuTrigger,
 } from "./components/ui/DropdownMenu";
 export { EmptyState } from "./components/ui/EmptyState";
+export { Field, FieldGroup } from "./components/ui/Field";
+export { FormSection } from "./components/ui/FormSection";
 export { IconButton } from "./components/ui/IconButton";
 export { Input } from "./components/ui/Input";
 export { Label } from "./components/ui/Label";
+export { MultiSelect } from "./components/ui/MultiSelect";
 export {
   Popover,
   PopoverAnchor,
@@ -78,6 +87,7 @@ export {
   PopoverTrigger,
 } from "./components/ui/Popover";
 export { RadioGroup, RadioGroupItem } from "./components/ui/RadioGroup";
+export { SearchInput } from "./components/ui/SearchInput";
 export {
   Select,
   SelectContent,
