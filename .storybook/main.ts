@@ -1,18 +1,16 @@
-import { defineMain } from "@storybook/nextjs-vite/node";
+import path from "node:path";
+import { defineMain } from "@storybook/nextjs/node";
 
 export default defineMain({
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  addons: [
-    "@chromatic-com/storybook",
-    "@storybook/test-runner",
-    "@storybook/addon-docs",
-    "@storybook/addon-onboarding",
-    "@storybook/addon-a11y",
-    "@storybook/addon-vitest",
+  stories: [
+    "../stories/**/*.mdx",
+    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
+  addons: ["@storybook/addon-a11y"],
   framework: {
-    name: "@storybook/nextjs-vite",
-    options: {},
+    name: "@storybook/nextjs",
+    options: {
+      nextConfigPath: path.resolve(process.cwd(), "apps/web/next.config.ts"),
+    },
   },
-  staticDirs: ["../public"],
 });

@@ -1,24 +1,51 @@
-// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
-
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
-import eslintConfigPrettier from "eslint-config-prettier";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { FlatCompat } from "@eslint/eslintrc";
 import storybook from "eslint-plugin-storybook";
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  ...storybook.configs["flat/recommended"],
-  eslintConfigPrettier,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-]);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-export default eslintConfig;
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+export default [
+  {
+    ignores: [
+      "**/node_modules/**",
+      "**/.next/**",
+      "apps/web/storybook-static/**",
+      "coverage/**",
+    ],
+  },
+  ...compat.config({
+    extends: ["next/core-web-vitals"],
+  }),
+  ...storybook.configs["flat/recommended"],
+  {
+    settings: {
+      next: {
+        rootDir: "apps/web",
+      },
+    },
+    rules: {
+      "@next/next/no-html-link-for-pages": "off",
+    },
+  },
+  {
+    files: ["apps/web/**/*.{ts,tsx}"],
+    settings: {
+      next: {
+        rootDir: "apps/web",
+      },
+    },
+  },
+  {
+    files: ["stories/**/*.stories.@(ts|tsx)", ".storybook/**/*.{ts,tsx}"],
+    rules: {
+      "import/no-anonymous-default-export": "off",
+      "storybook/no-title-property-in-meta": "off",
+    },
+  },
+];

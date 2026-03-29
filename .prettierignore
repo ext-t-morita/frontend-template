@@ -1,13 +1,7 @@
 node_modules
-.next
-out
 dist
 coverage
-public
-.storybook-static
-.build-storybook
-**/*.svg
+pnpm-lock.yaml
+apps/web/storybook-static
 **/*.ts
 **/*.tsx
-**/*.js
-**/*.jsx

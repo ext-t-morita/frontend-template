@@ -1,0 +1,6 @@
+interface:
+  display_name: "Pencil Design-Code Bridge"
+  short_description: "Bridge Pencil MCP designs and UI code workflows"
+  default_prompt: "Use $pencil-design-code-bridge to move between a Pencil design and the implementation code."
+policy:
+  allow_implicit_invocation: false
