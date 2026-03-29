@@ -39,6 +39,18 @@ describe("tooling configuration", () => {
     expect(biomeConfig.files.includes).toContain("**/*.tsx");
   });
 
+  it("points shared package typeRoots at the workspace root", () => {
+    const designTokensTsconfig = readProjectFile(
+      "packages/design-tokens/tsconfig.json",
+    );
+    const uiTsconfig = readProjectFile("packages/ui/tsconfig.json");
+
+    expect(designTokensTsconfig).toContain("../../node_modules/@types");
+    expect(designTokensTsconfig).not.toContain("apps/web/node_modules");
+    expect(uiTsconfig).toContain("../../node_modules/@types");
+    expect(uiTsconfig).not.toContain("apps/web/node_modules");
+  });
+
   it("configures lefthook for staged formatting and push validation", () => {
     const lefthookConfig = readProjectFile("lefthook.yml");
 

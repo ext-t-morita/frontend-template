@@ -2,7 +2,7 @@
   "extends": "../typescript-config/base.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "typeRoots": ["../../apps/web/node_modules/@types"],
+    "typeRoots": ["../../node_modules/@types"],
     "types": ["react", "react-dom"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]
