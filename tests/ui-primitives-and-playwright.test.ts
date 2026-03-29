@@ -35,7 +35,7 @@ describe("ui primitives and playwright setup", () => {
     const playwrightConfig = readProjectFile("playwright.config.ts");
     const smokeSpec = readProjectFile("tests/e2e/smoke.spec.ts");
     const visualSpec = readProjectFile("tests/visual/homepage.spec.ts");
-    const appPackage = JSON.parse(readProjectFile("apps/web/package.json")) as {
+    const appPackage = JSON.parse(readProjectFile("package.json")) as {
       scripts: Record<string, string>;
       devDependencies: Record<string, string>;
     };

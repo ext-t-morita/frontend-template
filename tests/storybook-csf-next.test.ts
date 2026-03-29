@@ -19,10 +19,8 @@ describe("storybook CSF Next setup", () => {
     expect(preview).toContain("@storybook/nextjs");
   });
 
-  it("adds Storybook scripts to the Next.js app package", () => {
-    const packageJson = JSON.parse(
-      readProjectFile("apps/web/package.json"),
-    ) as {
+  it("adds Storybook scripts to the workspace root package", () => {
+    const packageJson = JSON.parse(readProjectFile("package.json")) as {
       scripts: Record<string, string>;
       devDependencies: Record<string, string>;
     };

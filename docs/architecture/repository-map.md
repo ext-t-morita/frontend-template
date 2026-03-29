@@ -2,9 +2,9 @@
 
 ## 現在の構成
 
-現在のリポジトリは workspace 指向の構成を取っています。
+現在のリポジトリは root app + shared packages の構成を取っています。
 
-- `apps/web/`: Next.js App Router application
+- `app/`, `components/`, `features/`, `public/`: Next.js App Router application
 - `packages/design-tokens/`: token source と生成物
 - `packages/ui/`: shared UI primitives と layout pattern
 - `packages/typescript-config/`: shared TypeScript configuration
@@ -18,8 +18,8 @@
 
 - token や visual foundation の変更: `packages/design-tokens/`
 - reusable primitive や shared pattern: `packages/ui/`
-- app-specific composition: `apps/web/components/` または `apps/web/features/`
-- route composition と data fetching の入口: `apps/web/app/`
+- app-specific composition: `components/` または `features/`
+- route composition と data fetching の入口: `app/`
 - repository policy や process: `docs/`
 
 繰り返し始めた app-local pattern は、重複させず shared package へ昇格させます。

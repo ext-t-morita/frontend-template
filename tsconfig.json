@@ -1,15 +1,23 @@
 {
+  "extends": "./packages/typescript-config/nextjs.json",
   "compilerOptions": {
-    "target": "ES2022",
-    "lib": ["ES2022"],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "strict": true,
-    "typeRoots": ["./apps/web/node_modules/@types"],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "types": ["vitest/globals", "node"]
   },
-  "include": ["tests", "vitest.config.ts"]
+  "include": [
+    "next-env.d.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "features/**/*.ts",
+    "features/**/*.tsx",
+    "next.config.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
 }

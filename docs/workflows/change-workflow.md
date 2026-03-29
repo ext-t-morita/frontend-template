@@ -4,7 +4,7 @@
 
 1. 新しい pattern を作る前に `docs/` と既存 code を確認する
 2. system-level change なら先に `packages/design-tokens` または `packages/ui` を更新する
-3. page-level behavior は `apps/web` の既存 building block から組み立てる
+3. page-level behavior は root app の既存 building block から組み立てる
 4. 継続的なルールを追加したら `docs/` も更新する
 5. handoff 前に validation を回す
 
@@ -28,15 +28,15 @@ Storybook や browser regression を含む時は追加で次を使います。
 
 ```bash
 pnpm tokens:build
-pnpm --filter @repo/web build-storybook
-pnpm --filter @repo/web test:e2e:list
+pnpm build-storybook
+pnpm test:e2e:list
 ```
 
 Storybook, Playwright, E2E の責務分担は [`qa-strategy.md`](./qa-strategy.md) を正本とします。
 
 一時的な browser check は local dev mode の `cdpb` + `agent-browser` を優先します。  
 CI や恒久的な regression coverage にしたいものだけを Playwright spec にします。  
-`apps/web`, `stories`, `.storybook` を触った変更では、push 前に `pnpm lint:framework` を回します。
+`app`, `components`, `features`, `stories`, `.storybook` を触った変更では、push 前に `pnpm lint:framework` を回します。
 
 ## ドキュメントルール
 

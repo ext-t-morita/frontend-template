@@ -108,7 +108,7 @@ AI agent 向け:
 - design system surface に含めたい
 - 特定 route/domain に密結合ではない
 
-`apps/web/features/...` に置くべきか:
+`features/...` に置くべきか:
 
 - domain-specific
 - feature schema や server action に強く依存する

@@ -41,18 +41,18 @@ describe("documentation source of truth", () => {
     expect(readme).toContain("pnpm lint");
     expect(readme).toContain("pnpm lint:framework");
     expect(readme).toContain("pnpm check");
-    expect(readme).toContain("pnpm --filter @repo/web storybook");
+    expect(readme).toContain("pnpm storybook");
   });
 
   it("clarifies setup prerequisites and validation command intent in README", () => {
     const readme = readProjectFile("README.md");
 
-    expect(readme).toContain("Node.js 20");
+    expect(readme).toContain("Node.js 24");
     expect(readme).toContain("corepack enable");
     expect(readme).toContain("pnpm format:check");
     expect(readme).toContain("does not include");
-    expect(readme).toContain("pnpm --filter @repo/web build-storybook");
-    expect(readme).toContain("pnpm --filter @repo/web test:e2e:list");
+    expect(readme).toContain("pnpm build-storybook");
+    expect(readme).toContain("pnpm test:e2e:list");
   });
 
   it("shows starter users how to begin from docs/initialize", () => {

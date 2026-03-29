@@ -19,22 +19,16 @@ describe("storybook QA and framework-aware linting", () => {
   });
 
   it("extends the repository with framework-aware lint and Storybook a11y", () => {
-    const rootPackage = JSON.parse(readProjectFile("package.json")) as {
-      scripts: Record<string, string>;
-      devDependencies: Record<string, string>;
-    };
-    const packageJson = JSON.parse(
-      readProjectFile("apps/web/package.json"),
-    ) as {
+    const packageJson = JSON.parse(readProjectFile("package.json")) as {
       scripts: Record<string, string>;
       devDependencies: Record<string, string>;
     };
 
-    expect(rootPackage.scripts["lint:framework"]).toBeDefined();
-    expect(rootPackage.scripts["lint:framework"]).toContain("eslint");
-    expect(rootPackage.devDependencies.eslint).toBeTruthy();
-    expect(rootPackage.devDependencies["eslint-config-next"]).toBeTruthy();
-    expect(rootPackage.devDependencies["eslint-plugin-storybook"]).toBeTruthy();
+    expect(packageJson.scripts["lint:framework"]).toBeDefined();
+    expect(packageJson.scripts["lint:framework"]).toContain("eslint");
+    expect(packageJson.devDependencies.eslint).toBeTruthy();
+    expect(packageJson.devDependencies["eslint-config-next"]).toBeTruthy();
+    expect(packageJson.devDependencies["eslint-plugin-storybook"]).toBeTruthy();
     expect(packageJson.devDependencies["@storybook/addon-a11y"]).toBeTruthy();
   });
 

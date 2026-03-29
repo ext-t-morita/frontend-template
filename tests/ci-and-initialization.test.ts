@@ -33,7 +33,7 @@ describe("CI and initialization baseline", () => {
     expect(ciWorkflow).toContain("pnpm typecheck");
     expect(ciWorkflow).toContain("pnpm test");
     expect(ciWorkflow).toContain("pnpm build");
-    expect(ciWorkflow).toContain("pnpm --filter @repo/web build-storybook");
+    expect(ciWorkflow).toContain("pnpm build-storybook");
   });
 
   it("ships an env example for project initialization", () => {

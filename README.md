@@ -7,7 +7,7 @@
 
 ## 前提
 
-- CI は Node.js `20.18.0` を使います。ローカルも `Node.js 20.x` を推奨します
+- CI は Node.js `24.14.1` を使います。ローカルも `Node.js 24.x` を推奨します
 - `pnpm` は [`package.json`](./package.json) の `packageManager` で固定しています。初回は `corepack enable` を実行してください
 
 ## セットアップ
@@ -44,12 +44,12 @@ pnpm lint:framework
 pnpm tokens:build
 pnpm test
 pnpm build
-pnpm --filter @repo/web build-storybook
-pnpm --filter @repo/web test:e2e:list
+pnpm build-storybook
+pnpm test:e2e:list
 ```
 
 `pnpm check` は `lint`, `format:check`, `test`, `typecheck`, `build` をまとめて回します。  
-`pnpm check` does not include `pnpm lint:framework` なので、`apps/web`, `stories`, `.storybook` を触った時は別で実行してください。
+`pnpm check` does not include `pnpm lint:framework` なので、`app`, `components`, `features`, `stories`, `.storybook` を触った時は別で実行してください。
 
 ## Starter の使い始め方
 
@@ -59,22 +59,22 @@ pnpm --filter @repo/web test:e2e:list
 
 ## コマンド早見表
 
-| Command                                   | 使う場面                                                       |
-| ----------------------------------------- | -------------------------------------------------------------- |
-| `pnpm dev`                                | ローカル開発サーバーを hot reload 付きで起動する               |
-| `pnpm tokens:build`                       | token JSON を変更した                                          |
-| `pnpm lint`                               | 普段の速い lint を回す                                         |
-| `pnpm lint:fix`                           | Biome で自動修正したい                                         |
-| `pnpm lint:framework`                     | `apps/web`, `stories`, `.storybook` を触って push 前確認したい |
-| `pnpm test`                               | unit / docs / structure test を回す                            |
-| `pnpm typecheck`                          | packages と app の型検査をしたい                               |
-| `pnpm build`                              | production build を確認したい                                  |
-| `pnpm check`                              | 最終確認をまとめて回したい。`lint:framework` は別で回す        |
-| `pnpm --filter @repo/web storybook`       | Storybook 開発サーバーを起動して UI を確認したい               |
-| `pnpm --filter @repo/web build-storybook` | Storybook build を確認したい                                   |
-| `pnpm --filter @repo/web test:e2e:list`   | Playwright spec 一覧を見たい                                   |
-| `pnpm --filter @repo/web test:e2e`        | Playwright を実行したい                                        |
-| `pnpm hooks:install`                      | lefthook を入れ直したい                                        |
+| Command                | 使う場面                                                                            |
+| ---------------------- | ----------------------------------------------------------------------------------- |
+| `pnpm dev`             | ローカル開発サーバーを hot reload 付きで起動する                                    |
+| `pnpm tokens:build`    | token JSON を変更した                                                               |
+| `pnpm lint`            | 普段の速い lint を回す                                                              |
+| `pnpm lint:fix`        | Biome で自動修正したい                                                              |
+| `pnpm lint:framework`  | `app`, `components`, `features`, `stories`, `.storybook` を触って push 前確認したい |
+| `pnpm test`            | unit / docs / structure test を回す                                                 |
+| `pnpm typecheck`       | packages と app の型検査をしたい                                                    |
+| `pnpm build`           | production build を確認したい                                                       |
+| `pnpm check`           | 最終確認をまとめて回したい。`lint:framework` は別で回す                             |
+| `pnpm storybook`       | Storybook 開発サーバーを起動して UI を確認したい                                    |
+| `pnpm build-storybook` | Storybook build を確認したい                                                        |
+| `pnpm test:e2e:list`   | Playwright spec 一覧を見たい                                                        |
+| `pnpm test:e2e`        | Playwright を実行したい                                                             |
+| `pnpm hooks:install`   | lefthook を入れ直したい                                                             |
 
 - TypeScript files: Biome
 - TypeScript 以外のファイル: Prettier
@@ -84,7 +84,7 @@ pnpm --filter @repo/web test:e2e:list
 
 ## ワークスペース構成
 
-- `apps/web`: Next.js App Router application
+- `app`, `components`, `features`, `public`: root-level Next.js App Router application
 - `packages/design-tokens`: token source files と生成物
 - `packages/ui`: shared UI primitives と patterns
 - `packages/typescript-config`: shared TypeScript configuration

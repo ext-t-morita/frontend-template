@@ -1,5 +1,5 @@
 import preview from "../../.storybook/preview";
-import { HomePageView } from "../../apps/web/components/layouts/HomePageView";
+import { HomePageView } from "../../components/layouts/HomePageView";
 
 const meta = preview.meta({
   title: "Pages/Home Page",
