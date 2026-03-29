@@ -1,8 +1,37 @@
+export {
+  AppHeader,
+  type AppHeaderMetric,
+} from "./components/patterns/AppHeader";
+export {
+  type AuditLogEntry,
+  AuditLogList,
+} from "./components/patterns/AuditLogList";
+export { ConfirmDestructiveAction } from "./components/patterns/ConfirmDestructiveAction";
+export { CRUDTablePage } from "./components/patterns/CRUDTablePage";
+export {
+  DetailPane,
+  type DetailPaneItem,
+  type DetailPaneSection,
+} from "./components/patterns/DetailPane";
+export {
+  EntityDetailHeader,
+  type EntityDetailStat,
+} from "./components/patterns/EntityDetailHeader";
+export { InviteUserDialog } from "./components/patterns/InviteUserDialog";
 export { PageShell } from "./components/patterns/PageShell";
+export { PanelLayout } from "./components/patterns/PanelLayout";
+export { SectionHeader } from "./components/patterns/SectionHeader";
 export {
   SettingsForm,
   type SettingsFormValues,
 } from "./components/patterns/SettingsForm";
+export {
+  SidebarNav,
+  type SidebarNavItem,
+  type SidebarNavSection,
+} from "./components/patterns/SidebarNav";
+export { SplitView } from "./components/patterns/SplitView";
+export { TopNav, type TopNavItem } from "./components/patterns/TopNav";
 export {
   Accordion,
   AccordionContent,
