@@ -37,7 +37,7 @@ SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
 export const SelectContent = forwardRef<
   ElementRef<typeof SelectPrimitive.Content>,
   ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
->(({ className, position = "popper", ...props }, ref) => (
+>(({ children, className, position = "popper", ...props }, ref) => (
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
       ref={ref}
@@ -48,7 +48,9 @@ export const SelectContent = forwardRef<
       position={position}
       {...props}
     >
-      <SelectPrimitive.Viewport className="p-1.5" />
+      <SelectPrimitive.Viewport className="p-1.5">
+        {children}
+      </SelectPrimitive.Viewport>
     </SelectPrimitive.Content>
   </SelectPrimitive.Portal>
 ));
