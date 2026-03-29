@@ -7,10 +7,10 @@ function ColorTokenGrid() {
       {Object.entries(tokens.themes.dark.color).map(([name, value]) => (
         <div
           key={name}
-          className="rounded-[var(--radius-lg)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-surface)] p-4"
+          className="rounded-[var(--radius-card)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-surface)] p-4"
         >
           <div
-            className="h-20 rounded-[var(--radius-md)] border border-[var(--color-border-subtle)]"
+            className="h-20 rounded-[var(--radius-control)] border border-[var(--color-border-subtle)]"
             style={{ backgroundColor: value }}
           />
           <div className="mt-3 space-y-1">

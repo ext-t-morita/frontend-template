@@ -24,3 +24,10 @@ export const Success = meta.story({
     children: "Healthy",
   },
 });
+
+export const Warning = meta.story({
+  args: {
+    tone: "warning",
+    children: "Needs review",
+  },
+});

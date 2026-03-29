@@ -96,6 +96,7 @@ pnpm test:e2e:list
 
 - shared primitives には `Button`, `Badge`, `Input`, `SurfaceCard` を含みます
 - Storybook は `stories/` 配下の CSF Next stories を使います
+- Storybook review matrix は toolbar から `theme`, `density`, `surface`, `status`, `viewport` を切り替えて確認します
 - Playwright config は `playwright.config.ts` にあります
 - app-level browser coverage は `tests/e2e/` と `tests/visual/` から始めます
 - 一時的な画面確認は `cdpb` + `agent-browser` を優先し、恒久的な回帰確認だけを Playwright spec に上げます
