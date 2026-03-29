@@ -63,9 +63,19 @@ const reviewDecorator = (Story, context) => {
           padding: densityPadding[density],
           display: "grid",
           gap: densityGap[density],
+          alignItems: "start",
         },
       },
-      createElement(Story),
+      createElement(
+        "div",
+        {
+          style: {
+            width: "100%",
+            minWidth: 0,
+          },
+        },
+        createElement(Story),
+      ),
     ),
   );
 };
