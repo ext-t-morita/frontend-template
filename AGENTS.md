@@ -42,6 +42,9 @@ Wireframes and mockups are advisory only.
 - Storybook is the contract for shared components.
 - Playwright covers integrated behavior and stable route-level regression.
 - Pencil is optional and low-authority.
+- React Compiler is enabled; prefer compiler-first rendering over manual memoization.
+- Do not add `useMemo`, `useCallback`, or `React.memo` by default.
+- Only keep manual memoization when profiler evidence or an API-level stable reference requirement justifies it.
 
 ## Product / UI stack
 

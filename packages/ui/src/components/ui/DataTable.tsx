@@ -10,7 +10,6 @@ import type {
   VisibilityState,
 } from "@tanstack/react-table";
 import {
-  createColumnHelper,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -18,16 +17,16 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { cn } from "../../lib/cn";
 import { Button } from "./Button";
-import { Checkbox } from "./Checkbox";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "./DropdownMenu";
+import { buildDataTableColumns } from "./derived-state";
 import { EmptyState } from "./EmptyState";
 import { Input } from "./Input";
 import {
@@ -248,38 +247,11 @@ export function DataTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = useState<RowSelectionState>({});
-  const columnHelper = createColumnHelper<TData>();
+  const resolvedColumns = buildDataTableColumns(columns);
 
-  const resolvedColumns = useMemo(
-    () => [
-      columnHelper.display({
-        cell: ({ row }) => (
-          <Checkbox
-            aria-label={`Select row ${row.id}`}
-            checked={row.getIsSelected()}
-            onCheckedChange={(value) => row.toggleSelected(Boolean(value))}
-          />
-        ),
-        enableHiding: false,
-        header: ({ table }) => (
-          <Checkbox
-            aria-label="Select all rows"
-            checked={
-              table.getIsAllPageRowsSelected() ||
-              (table.getIsSomePageRowsSelected() && "indeterminate")
-            }
-            onCheckedChange={(value) =>
-              table.toggleAllPageRowsSelected(Boolean(value))
-            }
-          />
-        ),
-        id: "select",
-      }),
-      ...columns,
-    ],
-    [columnHelper, columns],
-  );
-
+  // TanStack Table returns non-memoizable functions here, so this boundary
+  // remains an explicit compiler exception until the library contract changes.
+  // eslint-disable-next-line react-hooks/incompatible-library
   const table = useReactTable({
     columns: resolvedColumns,
     data,
