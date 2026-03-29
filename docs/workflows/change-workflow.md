@@ -7,6 +7,8 @@
 3. page-level behavior は root app の既存 building block から組み立てる
 4. 継続的なルールを追加したら `docs/` も更新する
 5. handoff 前に validation を回す
+6. direct external dependency を触る時は range ではなく exact version を優先する
+7. manual memoization を減らす変更では、導出ロジックを pure helper とテストへ寄せてから `useMemo` / `useCallback` / `React.memo` を外す
 
 ## validation baseline
 
@@ -36,7 +38,7 @@ Storybook, Playwright, E2E の責務分担は [`qa-strategy.md`](./qa-strategy.m
 
 一時的な browser check は local dev mode の `cdpb` + `agent-browser` を優先します。  
 CI や恒久的な regression coverage にしたいものだけを Playwright spec にします。  
-`app`, `components`, `features`, `stories`, `.storybook` を触った変更では、push 前に `pnpm lint:framework` を回します。
+`app`, `components`, `features`, `packages`, `stories`, `.storybook` を触った変更では、push 前に `pnpm lint:framework` を回します。
 
 ## ドキュメントルール
 

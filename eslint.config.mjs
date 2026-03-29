@@ -1,27 +1,17 @@
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
 import storybook from "eslint-plugin-storybook";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-export default [
-  {
-    ignores: [
-      "**/node_modules/**",
-      "**/.next/**",
-      "storybook-static/**",
-      "coverage/**",
-    ],
-  },
-  ...compat.config({
-    extends: ["next/core-web-vitals"],
-  }),
+export default defineConfig([
+  ...nextVitals,
+  globalIgnores([
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+    "storybook-static/**",
+    "coverage/**",
+  ]),
   ...storybook.configs["flat/recommended"],
   {
     settings: {
@@ -38,11 +28,48 @@ export default [
       "app/**/*.{ts,tsx}",
       "components/**/*.{ts,tsx}",
       "features/**/*.{ts,tsx}",
+      "packages/**/*.{ts,tsx}",
     ],
     settings: {
       next: {
         rootDir: ".",
       },
+    },
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          paths: [
+            {
+              importNames: ["useMemo", "useCallback", "memo"],
+              message:
+                "React Compiler is enabled. Prefer compiler-first rendering and avoid useMemo, useCallback, and React.memo unless an explicitly documented exception is required.",
+              name: "react",
+            },
+          ],
+        },
+      ],
+      "no-restricted-syntax": [
+        "error",
+        {
+          message:
+            "React Compiler is enabled. Prefer compiler-first rendering and avoid React.useMemo unless an explicitly documented exception is required.",
+          selector:
+            "MemberExpression[object.name='React'][property.name='useMemo']",
+        },
+        {
+          message:
+            "React Compiler is enabled. Prefer compiler-first rendering and avoid React.useCallback unless an explicitly documented exception is required.",
+          selector:
+            "MemberExpression[object.name='React'][property.name='useCallback']",
+        },
+        {
+          message:
+            "React Compiler is enabled. Prefer compiler-first rendering and avoid React.memo unless an explicitly documented exception is required.",
+          selector:
+            "MemberExpression[object.name='React'][property.name='memo']",
+        },
+      ],
     },
   },
   {
@@ -52,4 +79,4 @@ export default [
       "storybook/no-title-property-in-meta": "off",
     },
   },
-];
+]);
