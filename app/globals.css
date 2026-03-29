@@ -1,4 +1,9 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+@source "../app";
+@source "../components";
+@source "../features";
+@source "../stories";
+@source "../packages/ui/src";
 
 :root {
   color-scheme: dark;
