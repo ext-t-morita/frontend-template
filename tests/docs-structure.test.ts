@@ -104,6 +104,21 @@ describe("documentation source of truth", () => {
     expect(agents).toContain("lint:framework");
   });
 
+  it("documents pull request template usage in AGENTS and workflow docs", () => {
+    const agents = readProjectFile("AGENTS.md");
+    const changeWorkflow = readProjectFile("docs/workflows/change-workflow.md");
+    const pullRequestTemplate = readProjectFile(
+      ".github/pull_request_template.md",
+    );
+
+    expect(agents).toContain("pull_request_template.md");
+    expect(agents).toContain("PR");
+    expect(changeWorkflow).toContain("pull_request_template.md");
+    expect(changeWorkflow).toContain("PR");
+    expect(pullRequestTemplate).toContain("## Summary");
+    expect(pullRequestTemplate).toContain("## Testing");
+  });
+
   it("documents project initialization decisions before implementation lock-in", () => {
     const initializeIndex = readProjectFile("docs/initialize/README.md");
     const technicalBaseline = readProjectFile(

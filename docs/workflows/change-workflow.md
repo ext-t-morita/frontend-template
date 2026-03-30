@@ -43,3 +43,9 @@ CI や恒久的な regression coverage にしたいものだけを Playwright sp
 ## ドキュメントルール
 
 実装変更で既存ドキュメントが偽になったら、同じ変更で `docs/` を更新します。
+
+## PR ルール
+
+- PR 作成時は `.github/pull_request_template.md` を本文の起点として使います。
+- `gh pr create` では inline body string ではなく `--body-file` を使い、template を必要な内容で埋めます。
+- template に書かれた summary, changes, testing を実際の差分に合わせて更新してから PR を作成します。

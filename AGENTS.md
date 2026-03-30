@@ -76,6 +76,7 @@ Wireframes and mockups are advisory only.
 - Hook installation should remain on `prepare`; do not introduce `make init` only to wrap existing `pnpm` workflows.
 - `pre-commit` must format staged TypeScript files with Biome and staged non-TypeScript files with Prettier.
 - `pre-push` must run `pnpm lint:framework`, `pnpm test`, and `pnpm build`, and block pushes on failure.
+- When creating a PR, start from `.github/pull_request_template.md` and pass the body via `gh pr create --body-file ...` instead of an inline body string.
 - Storybook should use `defineMain`, `definePreview`, and `preview.meta -> meta.story` instead of legacy default-export CSF files.
 - For ad hoc browser exploration in dev mode, prefer `cdpb` with the `agent-browser` skill over Playwright MCP when possible.
 - Use Playwright spec files for durable regression coverage, CI, and reviewable browser behavior contracts.
