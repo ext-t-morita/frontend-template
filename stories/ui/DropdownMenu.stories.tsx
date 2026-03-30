@@ -1,6 +1,5 @@
-import preview from "../../.storybook/preview";
-import { Button } from "../../packages/ui/src/components/ui/Button";
 import {
+  Button,
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
@@ -8,7 +7,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../packages/ui/src/components/ui/DropdownMenu";
+} from "@repo/ui";
+import preview from "../../.storybook/preview";
 
 const meta = preview.meta({
   title: "UI/DropdownMenu",

@@ -1,5 +1,5 @@
+import { StatusPill } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { StatusPill } from "../../packages/ui/src/components/ui/StatusPill";
 
 const meta = preview.meta({
   title: "UI/StatusPill",

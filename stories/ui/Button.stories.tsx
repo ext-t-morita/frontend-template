@@ -1,5 +1,5 @@
+import { Button } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Button } from "../../packages/ui/src/components/ui/Button";
 
 const meta = preview.meta({
   title: "UI/Button",

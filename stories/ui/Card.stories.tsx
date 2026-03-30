@@ -1,5 +1,5 @@
+import { Card } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Card } from "../../packages/ui/src/components/ui/Card";
 
 const meta = preview.meta({
   title: "UI/Card",

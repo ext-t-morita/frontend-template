@@ -1,6 +1,5 @@
-import preview from "../../.storybook/preview";
-import { Button } from "../../packages/ui/src/components/ui/Button";
 import {
+  Button,
   Drawer,
   DrawerContent,
   DrawerDescription,
@@ -8,7 +7,8 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "../../packages/ui/src/components/ui/Drawer";
+} from "@repo/ui";
+import preview from "../../.storybook/preview";
 
 const meta = preview.meta({
   title: "UI/Drawer",

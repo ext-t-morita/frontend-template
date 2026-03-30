@@ -1,11 +1,11 @@
-import preview from "../../.storybook/preview";
-import { Button } from "../../packages/ui/src/components/ui/Button";
 import {
+  Button,
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "../../packages/ui/src/components/ui/Tooltip";
+} from "@repo/ui";
+import preview from "../../.storybook/preview";
 
 const meta = preview.meta({
   title: "UI/Tooltip",

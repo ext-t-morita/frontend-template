@@ -1,7 +1,6 @@
+import { DatePicker, Field } from "@repo/ui";
 import { useState } from "react";
 import preview from "../../.storybook/preview";
-import { DatePicker } from "../../packages/ui/src/components/ui/DatePicker";
-import { Field } from "../../packages/ui/src/components/ui/Field";
 
 const meta = preview.meta({
   title: "UI/DatePicker",

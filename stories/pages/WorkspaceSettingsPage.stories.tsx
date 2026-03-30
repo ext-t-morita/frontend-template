@@ -1,12 +1,14 @@
+import {
+  Button,
+  DetailPane,
+  PageShell,
+  PanelLayout,
+  SettingsForm,
+  SidebarNav,
+  StatusPill,
+  TopNav,
+} from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { DetailPane } from "../../packages/ui/src/components/patterns/DetailPane";
-import { PageShell } from "../../packages/ui/src/components/patterns/PageShell";
-import { PanelLayout } from "../../packages/ui/src/components/patterns/PanelLayout";
-import { SettingsForm } from "../../packages/ui/src/components/patterns/SettingsForm";
-import { SidebarNav } from "../../packages/ui/src/components/patterns/SidebarNav";
-import { TopNav } from "../../packages/ui/src/components/patterns/TopNav";
-import { Button } from "../../packages/ui/src/components/ui/Button";
-import { StatusPill } from "../../packages/ui/src/components/ui/StatusPill";
 import {
   dashboardMetrics,
   sidebarSections,

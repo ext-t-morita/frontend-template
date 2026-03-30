@@ -1,5 +1,5 @@
+import { AuditLogList } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { AuditLogList } from "../../packages/ui/src/components/patterns/AuditLogList";
 import { auditEntries } from "../support/layoutPatternFixtures";
 
 const meta = preview.meta({

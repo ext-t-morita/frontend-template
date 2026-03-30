@@ -1,7 +1,5 @@
+import { Button, EntityDetailHeader, StatusPill } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { EntityDetailHeader } from "../../packages/ui/src/components/patterns/EntityDetailHeader";
-import { Button } from "../../packages/ui/src/components/ui/Button";
-import { StatusPill } from "../../packages/ui/src/components/ui/StatusPill";
 import { teamDetailStats, teamTags } from "../support/layoutPatternFixtures";
 
 const meta = preview.meta({

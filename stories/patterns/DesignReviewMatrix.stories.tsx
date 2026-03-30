@@ -1,18 +1,18 @@
-import preview from "../../.storybook/preview";
-import { PageShell } from "../../packages/ui/src/components/patterns/PageShell";
-import { Badge } from "../../packages/ui/src/components/ui/Badge";
-import { Button } from "../../packages/ui/src/components/ui/Button";
-import { Card } from "../../packages/ui/src/components/ui/Card";
-import { EmptyState } from "../../packages/ui/src/components/ui/EmptyState";
-import { Input } from "../../packages/ui/src/components/ui/Input";
-import { StatusPill } from "../../packages/ui/src/components/ui/StatusPill";
-import { SurfaceCard } from "../../packages/ui/src/components/ui/SurfaceCard";
 import {
+  Badge,
+  Button,
+  Card,
+  EmptyState,
+  Input,
+  PageShell,
+  StatusPill,
+  SurfaceCard,
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "../../packages/ui/src/components/ui/Tabs";
+} from "@repo/ui";
+import preview from "../../.storybook/preview";
 
 const densityGap = {
   compact: "gap-4",

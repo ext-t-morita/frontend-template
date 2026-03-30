@@ -1,11 +1,11 @@
-import preview from "../../.storybook/preview";
-import { PageShell } from "../../packages/ui/src/components/patterns/PageShell";
-import { Button } from "../../packages/ui/src/components/ui/Button";
 import {
+  Button,
   DataTable,
   type DataTableColumnDef,
   DataTableColumnHeader,
-} from "../../packages/ui/src/components/ui/DataTable";
+  PageShell,
+} from "@repo/ui";
+import preview from "../../.storybook/preview";
 
 type TeamRow = {
   id: string;

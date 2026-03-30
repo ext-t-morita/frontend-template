@@ -1,5 +1,5 @@
+import { Checkbox } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Checkbox } from "../../packages/ui/src/components/ui/Checkbox";
 
 const meta = preview.meta({
   title: "UI/Checkbox",

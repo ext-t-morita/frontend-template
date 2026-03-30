@@ -1,5 +1,5 @@
+import { Textarea } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Textarea } from "../../packages/ui/src/components/ui/Textarea";
 
 const meta = preview.meta({
   title: "UI/Textarea",

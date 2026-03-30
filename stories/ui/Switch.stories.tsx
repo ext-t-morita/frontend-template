@@ -1,5 +1,5 @@
+import { Switch } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Switch } from "../../packages/ui/src/components/ui/Switch";
 
 const meta = preview.meta({
   title: "UI/Switch",

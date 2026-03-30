@@ -1,7 +1,5 @@
+import { Card, ConfirmDestructiveAction, InviteUserDialog } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { ConfirmDestructiveAction } from "../../packages/ui/src/components/patterns/ConfirmDestructiveAction";
-import { InviteUserDialog } from "../../packages/ui/src/components/patterns/InviteUserDialog";
-import { Card } from "../../packages/ui/src/components/ui/Card";
 
 const meta = preview.meta({
   title: "Patterns/Dialogs",

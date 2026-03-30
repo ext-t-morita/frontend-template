@@ -1,6 +1,6 @@
+import { SearchInput } from "@repo/ui";
 import { useState } from "react";
 import preview from "../../.storybook/preview";
-import { SearchInput } from "../../packages/ui/src/components/ui/SearchInput";
 
 const meta = preview.meta({
   title: "UI/SearchInput",

@@ -1,6 +1,5 @@
+import { PageShell, SettingsForm } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { PageShell } from "../../packages/ui/src/components/patterns/PageShell";
-import { SettingsForm } from "../../packages/ui/src/components/patterns/SettingsForm";
 
 const meta = preview.meta({
   title: "Patterns/SettingsForm",

@@ -1,5 +1,5 @@
+import { Separator } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Separator } from "../../packages/ui/src/components/ui/Separator";
 
 const meta = preview.meta({
   title: "UI/Separator",

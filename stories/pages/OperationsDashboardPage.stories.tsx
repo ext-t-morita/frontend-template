@@ -1,14 +1,16 @@
+import {
+  AuditLogList,
+  Badge,
+  Button,
+  Card,
+  PageShell,
+  PanelLayout,
+  SectionHeader,
+  SidebarNav,
+  StatusPill,
+  TopNav,
+} from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { AuditLogList } from "../../packages/ui/src/components/patterns/AuditLogList";
-import { PageShell } from "../../packages/ui/src/components/patterns/PageShell";
-import { PanelLayout } from "../../packages/ui/src/components/patterns/PanelLayout";
-import { SectionHeader } from "../../packages/ui/src/components/patterns/SectionHeader";
-import { SidebarNav } from "../../packages/ui/src/components/patterns/SidebarNav";
-import { TopNav } from "../../packages/ui/src/components/patterns/TopNav";
-import { Badge } from "../../packages/ui/src/components/ui/Badge";
-import { Button } from "../../packages/ui/src/components/ui/Button";
-import { Card } from "../../packages/ui/src/components/ui/Card";
-import { StatusPill } from "../../packages/ui/src/components/ui/StatusPill";
 import {
   auditEntries,
   dashboardMetrics,

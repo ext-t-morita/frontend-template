@@ -1,5 +1,5 @@
+import { Badge } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Badge } from "../../packages/ui/src/components/ui/Badge";
 
 const meta = preview.meta({
   title: "UI/Badge",

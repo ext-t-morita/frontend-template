@@ -1,6 +1,5 @@
-import preview from "../../.storybook/preview";
-import { Button } from "../../packages/ui/src/components/ui/Button";
 import {
+  Button,
   Dialog,
   DialogContent,
   DialogDescription,
@@ -8,7 +7,8 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../../packages/ui/src/components/ui/Dialog";
+} from "@repo/ui";
+import preview from "../../.storybook/preview";
 
 const meta = preview.meta({
   title: "UI/Dialog",

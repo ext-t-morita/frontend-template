@@ -1,8 +1,5 @@
+import { RadioGroup, RadioGroupItem } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import {
-  RadioGroup,
-  RadioGroupItem,
-} from "../../packages/ui/src/components/ui/RadioGroup";
 
 const meta = preview.meta({
   title: "UI/RadioGroup",

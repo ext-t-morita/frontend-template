@@ -1,11 +1,11 @@
-import preview from "../../.storybook/preview";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../../packages/ui/src/components/ui/Select";
+} from "@repo/ui";
+import preview from "../../.storybook/preview";
 
 const meta = preview.meta({
   title: "UI/Select",
