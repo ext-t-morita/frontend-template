@@ -33,7 +33,7 @@ export function AuditLogList({
       <div className="space-y-3">
         {entries.map((entry) => (
           <article
-            className="rounded-[var(--radius-control)] border border-[var(--color-border-subtle)] bg-[rgba(255,255,255,0.03)] px-4 py-4"
+            className="rounded-[var(--radius-control)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-sunken)] px-4 py-4"
             key={entry.id}
           >
             <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">

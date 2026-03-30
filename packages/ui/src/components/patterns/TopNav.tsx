@@ -18,7 +18,7 @@ export function TopNav({ items }: TopNavProps) {
         {items.map((item) => (
           <a
             className={cn(
-              "inline-flex items-center gap-2 rounded-[var(--radius-pill)] px-4 py-2.5 text-sm font-medium transition hover:bg-[rgba(255,255,255,0.05)]",
+              "inline-flex items-center gap-2 rounded-[var(--radius-pill)] px-4 py-2.5 text-sm font-medium transition-colors hover:bg-[var(--color-bg-neutral-hovered)]",
               item.current
                 ? "bg-[var(--color-action-primary-bg)] text-[var(--color-action-primary-fg)]"
                 : "text-[var(--color-fg-muted)]",
@@ -32,8 +32,8 @@ export function TopNav({ items }: TopNavProps) {
                 className={cn(
                   "rounded-full px-2 py-0.5 text-xs",
                   item.current
-                    ? "bg-[rgba(255,255,255,0.18)]"
-                    : "bg-[rgba(255,255,255,0.08)] text-[var(--color-fg-default)]",
+                    ? "bg-[var(--color-bg-selected)] text-[var(--color-fg-accent)]"
+                    : "bg-[var(--color-bg-neutral-subtle)] text-[var(--color-fg-default)]",
                 )}
               >
                 {item.count}

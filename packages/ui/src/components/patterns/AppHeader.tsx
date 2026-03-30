@@ -57,7 +57,7 @@ export function AppHeader({
         <dl className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           {metrics.map((metric) => (
             <div
-              className="rounded-[var(--radius-control)] border border-[var(--color-border-subtle)] bg-[rgba(255,255,255,0.03)] px-4 py-3"
+              className="rounded-[var(--radius-control)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-sunken)] px-4 py-3"
               key={metric.label}
             >
               <dt className="text-xs uppercase tracking-[0.16em] text-[var(--color-fg-muted)]">

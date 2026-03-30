@@ -40,7 +40,7 @@ export const DropdownMenuItem = forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "flex cursor-default items-center gap-2 rounded-[var(--radius-control)] px-3 py-2 text-sm text-[var(--color-fg-default)] outline-none transition focus:bg-[rgba(255,255,255,0.08)] data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      "flex cursor-default items-center gap-2 rounded-[var(--radius-control)] px-3 py-2 text-sm text-[var(--color-fg-default)] outline-none transition-colors focus:bg-[var(--color-bg-neutral-hovered)] data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
       className,
     )}
     {...props}
@@ -56,7 +56,7 @@ export const DropdownMenuCheckboxItem = forwardRef<
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      "flex cursor-default items-center gap-2 rounded-[var(--radius-control)] px-3 py-2 text-sm text-[var(--color-fg-default)] outline-none transition focus:bg-[rgba(255,255,255,0.08)]",
+      "flex cursor-default items-center gap-2 rounded-[var(--radius-control)] px-3 py-2 text-sm text-[var(--color-fg-default)] outline-none transition-colors focus:bg-[var(--color-bg-neutral-hovered)]",
       className,
     )}
     {...props}
@@ -78,7 +78,7 @@ export const DropdownMenuRadioItem = forwardRef<
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      "flex cursor-default items-center justify-between gap-2 rounded-[var(--radius-control)] px-3 py-2 text-sm text-[var(--color-fg-default)] outline-none transition focus:bg-[rgba(255,255,255,0.08)]",
+      "flex cursor-default items-center justify-between gap-2 rounded-[var(--radius-control)] px-3 py-2 text-sm text-[var(--color-fg-default)] outline-none transition-colors focus:bg-[var(--color-bg-neutral-hovered)]",
       className,
     )}
     {...props}
@@ -127,7 +127,7 @@ export const DropdownMenuSubTrigger = forwardRef<
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      "flex cursor-default items-center justify-between rounded-[var(--radius-control)] px-3 py-2 text-sm text-[var(--color-fg-default)] outline-none transition focus:bg-[rgba(255,255,255,0.08)]",
+      "flex cursor-default items-center justify-between rounded-[var(--radius-control)] px-3 py-2 text-sm text-[var(--color-fg-default)] outline-none transition-colors focus:bg-[var(--color-bg-neutral-hovered)]",
       className,
     )}
     {...props}

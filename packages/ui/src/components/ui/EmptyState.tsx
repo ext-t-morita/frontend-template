@@ -19,13 +19,13 @@ export function EmptyState({
   return (
     <div
       className={cn(
-        "flex flex-col items-start gap-4 rounded-[var(--radius-card)] border border-dashed border-[var(--color-border-subtle)] bg-[rgba(255,255,255,0.02)] p-6 text-left",
+        "flex flex-col items-start gap-4 rounded-[var(--radius-card)] border border-dashed border-[var(--color-border-subtle)] bg-[var(--color-bg-sunken)] p-6 text-left",
         className,
       )}
       {...props}
     >
       {icon ? (
-        <div className="flex h-12 w-12 items-center justify-center rounded-[var(--radius-control)] bg-[rgba(76,125,255,0.12)] text-lg text-[var(--color-action-primary-bg)]">
+        <div className="flex h-12 w-12 items-center justify-center rounded-[var(--radius-control)] bg-[var(--color-bg-selected)] text-lg text-[var(--color-fg-accent)]">
           {icon}
         </div>
       ) : null}

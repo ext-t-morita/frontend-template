@@ -17,7 +17,7 @@ export const TabsList = forwardRef<
   <TabsPrimitive.List
     ref={ref}
     className={cn(
-      "inline-flex rounded-[var(--radius-pill)] bg-[rgba(255,255,255,0.05)] p-1",
+      "inline-flex rounded-[var(--radius-pill)] bg-[var(--color-bg-sunken)] p-1",
       className,
     )}
     {...props}
@@ -33,7 +33,7 @@ export const TabsTrigger = forwardRef<
   <TabsPrimitive.Trigger
     ref={ref}
     className={cn(
-      "inline-flex items-center justify-center rounded-[var(--radius-pill)] px-4 py-2 text-sm text-[var(--color-fg-muted)] outline-none transition focus-visible:ring-2 focus-visible:ring-[var(--color-action-primary-bg)] data-[state=active]:bg-[var(--color-bg-elevated)] data-[state=active]:text-[var(--color-fg-default)]",
+      "inline-flex items-center justify-center rounded-[var(--radius-pill)] px-4 py-2 text-sm text-[var(--color-fg-muted)] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] data-[state=active]:bg-[var(--color-bg-surface)] data-[state=active]:text-[var(--color-fg-default)] hover:bg-[var(--color-bg-neutral-hovered)]",
       className,
     )}
     {...props}

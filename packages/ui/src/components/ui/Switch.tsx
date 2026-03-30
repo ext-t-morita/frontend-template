@@ -18,7 +18,7 @@ export const Switch = forwardRef<
   ElementRef<typeof SwitchPrimitive.Root>,
   SwitchProps
 >(({ className, description, label, ...props }, ref) => (
-  <div className="flex items-start justify-between gap-4 rounded-[var(--radius-card)] border border-[var(--color-border-subtle)] bg-[rgba(255,255,255,0.03)] p-4 text-sm text-[var(--color-fg-default)]">
+  <div className="flex items-start justify-between gap-4 rounded-[var(--radius-card)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-sunken)] p-4 text-sm text-[var(--color-fg-default)]">
     <span className="space-y-1">
       {label ? <span className="block font-medium">{label}</span> : null}
       {description ? (
@@ -30,7 +30,7 @@ export const Switch = forwardRef<
     <SwitchPrimitive.Root
       ref={ref}
       className={cn(
-        "relative inline-flex h-6 w-11 shrink-0 rounded-full bg-[var(--color-border-subtle)] outline-none transition focus-visible:ring-2 focus-visible:ring-[var(--color-action-primary-bg)] data-[state=checked]:bg-[var(--color-action-primary-bg)] disabled:cursor-not-allowed disabled:opacity-60",
+        "relative inline-flex h-6 w-11 shrink-0 rounded-full bg-[var(--color-border-input)] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] data-[state=checked]:bg-[var(--color-action-primary-bg)] disabled:cursor-not-allowed disabled:opacity-60",
         className,
       )}
       {...props}

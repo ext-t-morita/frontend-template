@@ -53,7 +53,7 @@ export function DetailPane({
             <dl className="space-y-3">
               {section.items.map((item) => (
                 <div
-                  className="rounded-[var(--radius-control)] border border-[var(--color-border-subtle)] bg-[rgba(255,255,255,0.03)] px-4 py-3"
+                  className="rounded-[var(--radius-control)] border border-[var(--color-border-subtle)] bg-[var(--color-bg-sunken)] px-4 py-3"
                   key={String(item.label)}
                 >
                   <dt className="text-xs uppercase tracking-[0.16em] text-[var(--color-fg-muted)]">

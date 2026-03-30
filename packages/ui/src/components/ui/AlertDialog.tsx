@@ -22,7 +22,7 @@ export const AlertDialogOverlay = forwardRef<
   <AlertDialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      "fixed inset-0 z-50 bg-[rgba(3,7,18,0.78)] backdrop-blur-sm",
+      "fixed inset-0 z-50 bg-[var(--color-overlay-scrim)] backdrop-blur-sm",
       className,
     )}
     {...props}
@@ -40,7 +40,7 @@ export const AlertDialogContent = forwardRef<
     <AlertDialogPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed left-1/2 top-1/2 z-50 w-[min(92vw,30rem)] -translate-x-1/2 -translate-y-1/2 rounded-[var(--radius-card)] border border-rose-400/30 bg-[var(--color-bg-surface)] p-6 shadow-[var(--shadow-surface)]",
+        "fixed left-1/2 top-1/2 z-50 w-[min(92vw,30rem)] -translate-x-1/2 -translate-y-1/2 rounded-[var(--radius-card)] border border-[var(--color-border-danger)] bg-[var(--color-bg-surface)] p-6 shadow-[var(--shadow-surface)]",
         className,
       )}
       {...props}
