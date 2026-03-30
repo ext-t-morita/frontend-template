@@ -29,6 +29,9 @@ describe("ideal future repository structure", () => {
   });
 
   it("includes repository-level scaffolding for storybook and tests", () => {
+    expect(existsSync(projectPath(".github/pull_request_template.md"))).toBe(
+      true,
+    );
     expect(existsSync(projectPath(".storybook/main.ts"))).toBe(true);
     expect(existsSync(projectPath(".storybook/preview.ts"))).toBe(true);
     expect(existsSync(projectPath(".storybook/manager.ts"))).toBe(true);
