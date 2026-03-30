@@ -69,7 +69,7 @@ export function Combobox({
           className={cn(
             "flex w-full items-center justify-between gap-3 rounded-[var(--radius-control)] border border-[var(--color-border-input)] bg-[var(--color-bg-surface)] px-4 py-3 text-left text-sm text-[var(--color-fg-default)] outline-none transition-colors focus-visible:border-[var(--color-border-focus)] focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] disabled:cursor-not-allowed disabled:opacity-60",
             invalid &&
-              "border-[var(--color-border-danger)] focus-visible:ring-[var(--color-border-danger)]",
+              "border-[var(--color-border-danger)] focus-visible:border-[var(--color-border-danger)] focus-visible:ring-[var(--color-border-danger)]",
             className,
           )}
           disabled={disabled}

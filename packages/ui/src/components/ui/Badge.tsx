@@ -19,7 +19,7 @@ export function Badge({
         tone === "neutral" &&
           "border border-[var(--color-border-subtle)] bg-[var(--color-bg-neutral-subtle)] text-[var(--color-fg-muted)]",
         tone === "info" &&
-          "bg-[var(--color-bg-selected)] text-[var(--color-fg-accent)]",
+          "bg-[var(--color-action-primary-bg)] text-[var(--color-action-primary-fg)]",
         tone === "success" &&
           "bg-[var(--color-success-surface)] text-[var(--color-fg-success)]",
         tone === "warning" &&

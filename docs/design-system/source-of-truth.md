@@ -25,4 +25,6 @@ Mockup や Pencil sketch は参考情報です。
 - palette 由来の名前より semantic token name を優先する
 - light / dark の差分は theme token で吸収し、component 側で `rgba(...)` や palette 値を直書きしない
 - hover, selected, focus, danger など interaction/state 色も semantic token に揃える
+- invalid state の control は focus 中も error affordance を維持し、focus style で打ち消さない
+- Badge / StatusPill など小さい status surface は、support 対象 theme ごとに text contrast AA を満たす
 - accessibility-sensitive な interaction logic は page-local の ad-hoc 実装ではなく shared primitive に置く
