@@ -1,9 +1,11 @@
+import {
+  Button,
+  CRUDTablePage,
+  DetailPane,
+  SidebarNav,
+  StatusPill,
+} from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { CRUDTablePage } from "../../packages/ui/src/components/patterns/CRUDTablePage";
-import { DetailPane } from "../../packages/ui/src/components/patterns/DetailPane";
-import { SidebarNav } from "../../packages/ui/src/components/patterns/SidebarNav";
-import { Button } from "../../packages/ui/src/components/ui/Button";
-import { StatusPill } from "../../packages/ui/src/components/ui/StatusPill";
 import {
   dashboardMetrics,
   sidebarSections,

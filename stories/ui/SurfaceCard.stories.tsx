@@ -1,5 +1,5 @@
+import { SurfaceCard } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { SurfaceCard } from "../../packages/ui/src/components/ui/SurfaceCard";
 
 const meta = preview.meta({
   title: "UI/SurfaceCard",

@@ -1,10 +1,5 @@
+import { Button, Popover, PopoverContent, PopoverTrigger } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Button } from "../../packages/ui/src/components/ui/Button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "../../packages/ui/src/components/ui/Popover";
 
 const meta = preview.meta({
   title: "UI/Popover",

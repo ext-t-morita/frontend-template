@@ -1,10 +1,10 @@
-import preview from "../../.storybook/preview";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../../packages/ui/src/components/ui/Accordion";
+} from "@repo/ui";
+import preview from "../../.storybook/preview";
 
 const meta = preview.meta({
   title: "UI/Accordion",

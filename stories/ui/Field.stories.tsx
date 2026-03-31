@@ -1,9 +1,12 @@
+import {
+  DatePicker,
+  Field,
+  FieldGroup,
+  FormSection,
+  Input,
+  Textarea,
+} from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { DatePicker } from "../../packages/ui/src/components/ui/DatePicker";
-import { Field, FieldGroup } from "../../packages/ui/src/components/ui/Field";
-import { FormSection } from "../../packages/ui/src/components/ui/FormSection";
-import { Input } from "../../packages/ui/src/components/ui/Input";
-import { Textarea } from "../../packages/ui/src/components/ui/Textarea";
 
 const meta = preview.meta({
   title: "UI/Field",

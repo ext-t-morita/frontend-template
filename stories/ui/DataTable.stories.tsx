@@ -1,9 +1,9 @@
-import preview from "../../.storybook/preview";
 import {
   DataTable,
   type DataTableColumnDef,
   DataTableColumnHeader,
-} from "../../packages/ui/src/components/ui/DataTable";
+} from "@repo/ui";
+import preview from "../../.storybook/preview";
 
 type ProjectRow = {
   id: string;

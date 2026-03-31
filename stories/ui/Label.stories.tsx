@@ -1,6 +1,5 @@
+import { Input, Label } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Input } from "../../packages/ui/src/components/ui/Input";
-import { Label } from "../../packages/ui/src/components/ui/Label";
 
 const meta = preview.meta({
   title: "UI/Label",

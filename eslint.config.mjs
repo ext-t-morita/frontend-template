@@ -2,6 +2,15 @@ import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import storybook from "eslint-plugin-storybook";
 
+const reactCompilerImportRestrictions = [
+  {
+    importNames: ["useMemo", "useCallback", "memo"],
+    message:
+      "React Compiler is enabled. Prefer compiler-first rendering and avoid useMemo, useCallback, and React.memo unless an explicitly documented exception is required.",
+    name: "react",
+  },
+];
+
 export default defineConfig([
   ...nextVitals,
   globalIgnores([
@@ -39,14 +48,7 @@ export default defineConfig([
       "no-restricted-imports": [
         "error",
         {
-          paths: [
-            {
-              importNames: ["useMemo", "useCallback", "memo"],
-              message:
-                "React Compiler is enabled. Prefer compiler-first rendering and avoid useMemo, useCallback, and React.memo unless an explicitly documented exception is required.",
-              name: "react",
-            },
-          ],
+          paths: reactCompilerImportRestrictions,
         },
       ],
       "no-restricted-syntax": [
@@ -68,6 +70,29 @@ export default defineConfig([
             "React Compiler is enabled. Prefer compiler-first rendering and avoid React.memo unless an explicitly documented exception is required.",
           selector:
             "MemberExpression[object.name='React'][property.name='memo']",
+        },
+      ],
+    },
+  },
+  {
+    files: [
+      "app/**/*.{ts,tsx}",
+      "components/**/*.{ts,tsx}",
+      "features/**/*.{ts,tsx}",
+      "stories/**/*.{ts,tsx}",
+    ],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          paths: reactCompilerImportRestrictions,
+          patterns: [
+            {
+              group: ["**/packages/ui/src/**"],
+              message:
+                "Use the public @repo/ui entrypoint instead of importing from packages/ui/src directly.",
+            },
+          ],
         },
       ],
     },

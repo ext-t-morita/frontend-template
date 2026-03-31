@@ -1,5 +1,5 @@
+import { Input } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Input } from "../../packages/ui/src/components/ui/Input";
 
 const meta = preview.meta({
   title: "UI/Input",

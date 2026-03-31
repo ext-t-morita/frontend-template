@@ -1,10 +1,6 @@
+import { Combobox, type ComboboxOption, Field } from "@repo/ui";
 import { useState } from "react";
 import preview from "../../.storybook/preview";
-import {
-  Combobox,
-  type ComboboxOption,
-} from "../../packages/ui/src/components/ui/Combobox";
-import { Field } from "../../packages/ui/src/components/ui/Field";
 
 const options: ComboboxOption[] = [
   {

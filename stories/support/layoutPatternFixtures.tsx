@@ -1,16 +1,16 @@
-import type { ReactNode } from "react";
-import type { AppHeaderMetric } from "../../packages/ui/src/components/patterns/AppHeader";
-import type { AuditLogEntry } from "../../packages/ui/src/components/patterns/AuditLogList";
-import type { DetailPaneSection } from "../../packages/ui/src/components/patterns/DetailPane";
-import type { EntityDetailStat } from "../../packages/ui/src/components/patterns/EntityDetailHeader";
-import type { SidebarNavSection } from "../../packages/ui/src/components/patterns/SidebarNav";
-import type { TopNavItem } from "../../packages/ui/src/components/patterns/TopNav";
-import { Badge } from "../../packages/ui/src/components/ui/Badge";
 import {
+  type AppHeaderMetric,
+  type AuditLogEntry,
+  Badge,
   type DataTableColumnDef,
   DataTableColumnHeader,
-} from "../../packages/ui/src/components/ui/DataTable";
-import { StatusPill } from "../../packages/ui/src/components/ui/StatusPill";
+  type DetailPaneSection,
+  type EntityDetailStat,
+  type SidebarNavSection,
+  StatusPill,
+  type TopNavItem,
+} from "@repo/ui";
+import type { ReactNode } from "react";
 
 export type TeamRow = {
   id: string;

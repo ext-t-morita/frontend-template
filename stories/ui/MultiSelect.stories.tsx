@@ -1,8 +1,6 @@
+import { type ComboboxOption, Field, MultiSelect } from "@repo/ui";
 import { useState } from "react";
 import preview from "../../.storybook/preview";
-import type { ComboboxOption } from "../../packages/ui/src/components/ui/Combobox";
-import { Field } from "../../packages/ui/src/components/ui/Field";
-import { MultiSelect } from "../../packages/ui/src/components/ui/MultiSelect";
 
 const options: ComboboxOption[] = [
   {

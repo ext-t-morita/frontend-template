@@ -1,6 +1,5 @@
+import { Button, EmptyState } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import { Button } from "../../packages/ui/src/components/ui/Button";
-import { EmptyState } from "../../packages/ui/src/components/ui/EmptyState";
 
 const meta = preview.meta({
   title: "UI/EmptyState",

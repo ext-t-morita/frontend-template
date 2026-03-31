@@ -1,10 +1,5 @@
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@repo/ui";
 import preview from "../../.storybook/preview";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "../../packages/ui/src/components/ui/Tabs";
 
 const meta = preview.meta({
   title: "UI/Tabs",

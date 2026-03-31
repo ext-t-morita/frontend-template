@@ -58,6 +58,7 @@ export { Checkbox } from "./components/ui/Checkbox";
 export { Combobox, type ComboboxOption } from "./components/ui/Combobox";
 export {
   DataTable,
+  type DataTableColumnDef,
   DataTableColumnHeader,
   DataTableEmptyState,
   DataTableErrorState,

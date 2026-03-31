@@ -1,4 +1,3 @@
-import preview from "../../.storybook/preview";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,8 +8,9 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../../packages/ui/src/components/ui/AlertDialog";
-import { Button } from "../../packages/ui/src/components/ui/Button";
+  Button,
+} from "@repo/ui";
+import preview from "../../.storybook/preview";
 
 const meta = preview.meta({
   title: "UI/AlertDialog",
