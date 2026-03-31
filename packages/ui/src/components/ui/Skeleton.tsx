@@ -14,7 +14,7 @@ export function Skeleton({
     <div
       aria-hidden="true"
       className={cn(
-        "animate-pulse bg-[linear-gradient(90deg,rgba(255,255,255,0.05),rgba(255,255,255,0.12),rgba(255,255,255,0.05))] bg-[length:200%_100%]",
+        "animate-pulse bg-[linear-gradient(90deg,var(--color-skeleton-base),var(--color-skeleton-highlight),var(--color-skeleton-base))] bg-[length:200%_100%]",
         shape === "line" && "h-4 rounded-[var(--radius-pill)]",
         shape === "block" && "h-24 rounded-[var(--radius-card)]",
         shape === "pill" && "h-10 rounded-[var(--radius-pill)]",

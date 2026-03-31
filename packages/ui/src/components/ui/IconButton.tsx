@@ -23,13 +23,13 @@ export function IconButton({
   return (
     <button
       className={cn(
-        "inline-flex items-center justify-center rounded-[var(--radius-pill)] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-action-primary-bg)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-canvas)] disabled:cursor-not-allowed disabled:opacity-60",
+        "inline-flex items-center justify-center rounded-[var(--radius-pill)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-bg-canvas)] disabled:cursor-not-allowed disabled:opacity-60",
         tone === "primary" &&
-          "bg-[var(--color-action-primary-bg)] text-[var(--color-action-primary-fg)] hover:brightness-110",
+          "bg-[var(--color-action-primary-bg)] text-[var(--color-action-primary-fg)] hover:bg-[var(--color-action-primary-hovered)] active:bg-[var(--color-action-primary-pressed)]",
         tone === "secondary" &&
-          "border border-[var(--color-border-subtle)] bg-[var(--color-bg-elevated)] text-[var(--color-fg-default)] hover:bg-[rgba(255,255,255,0.08)]",
+          "border border-[var(--color-border-input)] bg-[var(--color-bg-surface)] text-[var(--color-fg-default)] hover:bg-[var(--color-bg-neutral-hovered)] active:bg-[var(--color-bg-neutral-pressed)]",
         tone === "ghost" &&
-          "text-[var(--color-fg-muted)] hover:bg-[rgba(255,255,255,0.08)] hover:text-[var(--color-fg-default)]",
+          "text-[var(--color-fg-muted)] hover:bg-[var(--color-bg-neutral-hovered)] hover:text-[var(--color-fg-default)] active:bg-[var(--color-bg-neutral-pressed)]",
         sizeClasses[size],
         className,
       )}

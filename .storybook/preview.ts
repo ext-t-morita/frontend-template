@@ -24,9 +24,9 @@ const densityGap = {
 const surfaceBackground = {
   flat: "var(--color-bg-canvas)",
   subtle:
-    "linear-gradient(180deg, rgba(255,255,255,0.03), transparent), var(--color-bg-surface)",
+    "linear-gradient(180deg, var(--color-bg-sunken), var(--color-bg-surface))",
   elevated:
-    "radial-gradient(circle at top left, rgba(76,125,255,0.18), transparent 28%), var(--color-bg-surface)",
+    "radial-gradient(circle at top left, var(--color-bg-accent-subtle), transparent 32%), var(--color-bg-surface)",
 } as const;
 
 const reviewDecorator = (Story, context) => {
@@ -123,7 +123,7 @@ export default definePreview({
     density: "comfortable",
     status: "info",
     surface: "subtle",
-    theme: "dark",
+    theme: "light",
     viewport: "desktop",
   },
   parameters: {

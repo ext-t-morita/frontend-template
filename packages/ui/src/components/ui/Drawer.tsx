@@ -22,7 +22,7 @@ export const DrawerOverlay = forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      "fixed inset-0 z-50 bg-[rgba(3,7,18,0.72)] backdrop-blur-sm",
+      "fixed inset-0 z-50 bg-[var(--color-overlay-scrim)] backdrop-blur-sm",
       className,
     )}
     {...props}
@@ -58,7 +58,7 @@ export const DrawerContent = forwardRef<
       {children}
       <DialogPrimitive.Close
         aria-label="Close drawer"
-        className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-pill)] text-[var(--color-fg-muted)] transition hover:bg-[rgba(255,255,255,0.08)] hover:text-[var(--color-fg-default)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-action-primary-bg)]"
+        className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-pill)] text-[var(--color-fg-muted)] transition-colors hover:bg-[var(--color-bg-neutral-hovered)] hover:text-[var(--color-fg-default)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-border-focus)]"
         type="button"
       >
         <CrossIcon />

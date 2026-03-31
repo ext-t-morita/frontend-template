@@ -6,11 +6,19 @@
 @source "../packages/ui/src";
 
 :root {
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
   color-scheme: dark;
 }
 
+[data-theme="light"] {
+  color-scheme: light;
+}
+
 html {
-  background: var(--color-bg-canvas);
+  background-color: var(--color-bg-canvas);
 }
 
 body {
@@ -19,7 +27,7 @@ body {
   background:
     radial-gradient(
       circle at top,
-      color-mix(in srgb, var(--color-action-primary-bg) 22%, transparent),
+      var(--color-bg-accent-subtle),
       transparent 42%
     ),
     var(--color-bg-canvas);

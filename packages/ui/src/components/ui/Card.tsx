@@ -24,8 +24,8 @@ export function Card({
     <div
       className={cn(
         "rounded-[var(--radius-card)] border border-[var(--color-border-subtle)]",
-        tone === "default" && "bg-[var(--color-bg-elevated)]",
-        tone === "muted" && "bg-[rgba(255,255,255,0.03)]",
+        tone === "default" && "bg-[var(--color-bg-raised)]",
+        tone === "muted" && "bg-[var(--color-bg-sunken)]",
         paddingClasses[padding],
         className,
       )}
